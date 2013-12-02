@@ -1,0 +1,9 @@
+create database cantina;
+
+use cantina;
+
+create table cliente (cpf bigint unsigned primary key not null, rg varchar(14), nome varchar(200) not null, email varchar(200), tel bigint, dataNasc datetime, endereco varchar(300), prevPagamento datetime );
+
+create table aluno (fk_cliente bigint unsigned primary key not null, periodo varchar(50), horario varchar(50), curso varchar(100), foreign key (fk_cliente) references cliente(cpf));
+
+create table professor (fk_cliente bigint unsigned primary key not null, contratado boolean, foreign key (fk_cliente) references cliente(cpf));

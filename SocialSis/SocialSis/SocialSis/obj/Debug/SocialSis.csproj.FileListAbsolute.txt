@@ -1,0 +1,27 @@
+E:\Sistema Final\SocialSis\SocialSis\bin\Debug\SocialSis.exe.config
+E:\Sistema Final\SocialSis\SocialSis\bin\Debug\SocialSis.exe
+E:\Sistema Final\SocialSis\SocialSis\bin\Debug\SocialSis.pdb
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.csprojResolveAssemblyReference.cache
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.FormClienteAluno.resources
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.FormClienteProfessor.resources
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.FormPrincipal.resources
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.Properties.Resources.resources
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.csproj.GenerateResource.Cache
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.exe
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.pdb
+E:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.FormLogin.resources
+F:\Sistema Final\SocialSis\SocialSis\bin\Debug\SocialSis.exe.config
+F:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.exe
+F:\Sistema Final\SocialSis\SocialSis\obj\Debug\SocialSis.pdb
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.exe.config
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.exe
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.pdb
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csprojResolveAssemblyReference.cache
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormClienteAluno.resources
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormClienteProfessor.resources
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormLogin.resources
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormPrincipal.resources
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.Properties.Resources.resources
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csproj.GenerateResource.Cache
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.exe
+C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.pdb
