@@ -30,9 +30,6 @@ namespace GUI
 
         private void alunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormClienteAluno fcAluno = new FormClienteAluno();
-       
-            fcAluno.Show();
 
         }
 
@@ -76,6 +73,18 @@ namespace GUI
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormClienteProfessor fc = new FormClienteProfessor();
+            fc.Show();
+        }
+
+        private void visualizarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormProduto fp = new FormProduto();
+            fp.Show();
         }
     }
 }

@@ -25,3 +25,15 @@ C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.Proper
 C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csproj.GenerateResource.Cache
 C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.exe
 C:\Users\Camila\Desktop\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.pdb
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.exe.config
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.exe
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.pdb
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.exe
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.pdb
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csprojResolveAssemblyReference.cache
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormClienteProfessor.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormLogin.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormPrincipal.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.Properties.Resources.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csproj.GenerateResource.Cache
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormProduto.resources

@@ -20,7 +20,7 @@ namespace SocialSis
         public Cliente() { }
 
         public Cliente(string nome, ulong cpf, string rg, string email,
-            ulong tel, string endereco /*DateTime prevPagamento, DateTime dataNasc*/)
+            ulong tel, string endereco, DateTime prevPagamento, DateTime dataNasc)
         {
             Nome = nome;
             Cpf = cpf;
@@ -28,8 +28,8 @@ namespace SocialSis
             Email = email;
             Tel = tel;
             Endereco = endereco;
-            //PrevPagamento = prevPagamento;
-           // DataNasc = dataNasc;
+            PrevPagamento = prevPagamento;
+            DataNasc = dataNasc;
         }
 
         public string Nome
