@@ -86,5 +86,11 @@ namespace GUI
             FormProduto fp = new FormProduto();
             fp.Show();
         }
+
+        private void visualizarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormCompra foc = new FormCompra();
+            foc.Show();
+        }
     }
 }

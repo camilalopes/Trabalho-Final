@@ -21,6 +21,11 @@ namespace SocialSis
             PrecoUnitario = precoUnitario;
         }
 
+        public Produto(string descricao)
+        {
+            Descricao = descricao;
+        }
+
         public string Descricao
         {
             get { return descricao; }
@@ -41,6 +46,11 @@ namespace SocialSis
         {
             get { return precoUnitario; }
             set { precoUnitario = value; }
+        }
+
+        public override string ToString()
+        {
+            return descricao;
         }
 
 

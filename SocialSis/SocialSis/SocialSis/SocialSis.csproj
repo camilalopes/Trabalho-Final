@@ -51,6 +51,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteDao.cs" />
     <Compile Include="Compra.cs" />
+    <Compile Include="CompraAux.cs" />
     <Compile Include="CompraDao.cs" />
     <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>
@@ -82,8 +83,8 @@
     <Compile Include="FormProduto.Designer.cs">
       <DependentUpon>FormProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemCompraDao.cs" />
+    <Compile Include="ItemProduto.cs" />
+    <Compile Include="ItemProdutoDao.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoDao.cs" />
     <Compile Include="Program.cs" />

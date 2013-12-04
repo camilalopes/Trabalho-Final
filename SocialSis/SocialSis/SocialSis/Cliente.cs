@@ -32,6 +32,11 @@ namespace SocialSis
             DataNasc = dataNasc;
         }
 
+        public Cliente(string nome)
+        {
+            Nome = nome;
+        }
+
         public string Nome
         {
             get { return nome; }
@@ -78,6 +83,11 @@ namespace SocialSis
         {
             get { return dataNasc; }
             set { dataNasc = value; }
+        }
+
+        public override string ToString()
+        {
+            return nome;
         }
 
 

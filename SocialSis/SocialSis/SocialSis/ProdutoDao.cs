@@ -109,5 +109,99 @@ namespace Dao
 
             return produtos;
         }
+
+        public static ArrayList buscarListaPorDescricao(Produto produto)
+        {
+            // Reposta padrão.
+            ArrayList produtos = null;
+
+            // Só é possível localizar uma item cuja descrição
+            // esteja especificada.
+            if (produto.Descricao != null)
+            {
+                // Cria uma coleção vazia.
+                produtos = new ArrayList();
+
+                MySqlCommand cmd;
+
+                string sql = "SELECT * FROM " + TABELA
+                    + " WHERE descricao LIKE @descricao;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@descricao",
+                    "%" + produto.Descricao + "%");
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    // adiciona o respectivo objeto cliente, construído
+                    // com os dados de retorno, à coleção de items.
+                    produtos.Add(
+                      new Produto(
+                        int.Parse(leitor["id"].ToString()),
+                        leitor["descricao"].ToString(), double.Parse(leitor["precoUnitario"].ToString())));
+
+
+                }
+
+                // Libera recursos de memória.
+                leitor.Close();
+            }
+
+            return produtos;
+        }
+
+        public static Produto buscarPorDescricao(Produto produto)
+        {
+            Produto resposta = null;
+
+            if (produto.Descricao != null)
+            {
+                MySqlCommand cmd;
+
+                string sql = "SELECT * FROM " + TABELA
+                    + " WHERE descricao LIKE @descricao;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@descricao",
+                    "%" + produto.Descricao + "%");
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                if (leitor.Read())
+                {
+                    resposta = new Produto(
+                        int.Parse(leitor["id"].ToString()),
+                        leitor["descricao"].ToString(), double.Parse(leitor["precoUnitario"].ToString())
+                    );
+
+
+                }
+                leitor.Close();
+            }
+
+
+            return resposta;
+
+        }
     }
 }

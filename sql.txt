@@ -17,7 +17,3 @@ create table notaFiscal(nBoleto bigint unsigned primary key not null, precoTotal
 create table insumo(id int unsigned primary key not null auto_increment, descricao varchar(50), precoUnitario double);
 
 create table itemInsumo(id int unsigned primary key not null auto_increment, quantidade int, fk_insumo int unsigned not null references insumo, fk_notafiscal bigint not null references notaFiscal, key (fk_insumo), key (fk_notafiscal));
-
-
-
-

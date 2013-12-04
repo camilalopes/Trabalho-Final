@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -124,7 +124,7 @@ namespace Dao
             // associados a um objeto para posterior leitura.
             MySqlDataReader leitor = cmd.ExecuteReader();
 
-            // Enquanto houver items correspondentes...
+            // Enquanto houver clientes correspondentes...
             while (leitor.Read())
             {
                 // adiciona o respectivo objeto item, construído
@@ -135,8 +135,8 @@ namespace Dao
                          leitor["email"].ToString(), ulong.Parse(leitor["tel"].ToString()), leitor["endereco"].ToString(),
                         DateTime.Parse(leitor["prevPagamento"].ToString()), DateTime.Parse(leitor["dataNasc"].ToString())
                         ));
-                    
-                
+
+
             }
 
             // Libera recursos de memória.
@@ -144,6 +144,105 @@ namespace Dao
 
 
             return clientes;
+        }
+
+
+        public static ArrayList buscarListaPorNome(Cliente cliente)
+        {
+            // Reposta padrão.
+            ArrayList clientes = null;
+
+            // Só é possível localizar uma item cuja descrição
+            // esteja especificada.
+            if (cliente.Nome != null)
+            {
+                // Cria uma coleção vazia.
+                clientes = new ArrayList();
+
+                MySqlCommand cmd;
+
+
+                string sql = "SELECT * FROM " + TABELA
+                    + " WHERE nome LIKE @nome;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@nome",
+                    "%" + cliente.Nome + "%");
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    // adiciona o respectivo objeto cliente, construído
+                    // com os dados de retorno, à coleção de items.
+                    clientes.Add(
+                        new Cliente(
+                            leitor["nome"].ToString(), ulong.Parse(leitor["cpf"].ToString()), leitor["rg"].ToString(),
+                             leitor["email"].ToString(), ulong.Parse(leitor["tel"].ToString()), leitor["endereco"].ToString(),
+                            DateTime.Parse(leitor["prevPagamento"].ToString()), DateTime.Parse(leitor["dataNasc"].ToString())
+                            ));
+
+
+                }
+
+                // Libera recursos de memória.
+                leitor.Close();
+            }
+
+            return clientes;
+        }
+
+        public static Cliente buscarPorNome(Cliente cliente)
+        {
+            Cliente resposta = null;
+
+            if (cliente.Nome != null)
+            {
+                MySqlCommand cmd;
+
+                string sql = "SELECT * FROM " + TABELA
+                    + " WHERE nome LIKE @nome;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@nome",
+                    "%" + cliente.Nome + "%");
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                if (leitor.Read())
+                {
+                    resposta = new Cliente(
+                            leitor["nome"].ToString(), ulong.Parse(leitor["cpf"].ToString()), leitor["rg"].ToString(),
+                             leitor["email"].ToString(), ulong.Parse(leitor["tel"].ToString()), leitor["endereco"].ToString(),
+                            DateTime.Parse(leitor["prevPagamento"].ToString()), DateTime.Parse(leitor["dataNasc"].ToString())
+                            );
+
+
+                }
+                leitor.Close();
+            }
+
+
+            return resposta;
+
         }
     }
 }

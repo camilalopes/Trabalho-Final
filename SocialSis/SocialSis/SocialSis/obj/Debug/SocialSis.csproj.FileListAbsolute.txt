@@ -37,3 +37,4 @@ C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\G
 C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.Properties.Resources.resources
 C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csproj.GenerateResource.Cache
 C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormProduto.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormCompra.resources

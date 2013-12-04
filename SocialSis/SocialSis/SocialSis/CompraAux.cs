@@ -6,34 +6,32 @@ using System.Threading.Tasks;
 
 namespace SocialSis
 {
-    class Compra
+    class CompraAux
     {
-        private int id;
         private DateTime dataPagamento;
         private DateTime dataCompra;
         private double total;
-        private Cliente cliente;
+        private int quantidade;
+        private string produto;
+        private string cliente;
 
-        public Compra() { }
+        public CompraAux() { }
 
-        public Compra(int id, DateTime dataPagamento, DateTime dataCompra, double total, Cliente cliente)
+        public CompraAux(DateTime dataCompra, string cliente, string produto, int quantidade, DateTime dataPagamento, double total)
         {
-            SetId(id);
             DataCompra = dataCompra;
+            Cliente = cliente;
+            Produto = produto;
+            Quantidade = quantidade;
             DataPagamento = dataPagamento;
             Total = total;
-            Cliente = cliente;
+            
         }
 
-
-        public void SetId(int id)
+        public int Quantidade
         {
-            this.id = id;
-        }
-
-        public int GetId()
-        {
-            return this.id;
+            get { return quantidade; }
+            set { quantidade = value; }
         }
 
         public DateTime DataCompra
@@ -54,17 +52,18 @@ namespace SocialSis
             set { total = value; }
         }
 
-        public Cliente Cliente
+        public string Cliente
         {
             get { return cliente; }
             set { cliente = value; }
         }
 
-        public double calcularTotal(Produto produto, int quantidade)
+        public string Produto
         {
-            double total;
-            total = produto.PrecoUnitario * quantidade;
-            return total;          
+            get { return  produto; }
+            set { produto = value; }
         }
+
+
     }
 }

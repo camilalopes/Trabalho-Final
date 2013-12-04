@@ -33,11 +33,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbSairSistema = new System.Windows.Forms.Label();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainMenuStrip.SuspendLayout();
@@ -83,6 +85,13 @@
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.clienteToolStripMenuItem.Text = "CLIENTE";
             // 
+            // visualizarToolStripMenuItem
+            // 
+            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            this.visualizarToolStripMenuItem.Click += new System.EventHandler(this.visualizarToolStripMenuItem_Click);
+            // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
@@ -96,20 +105,14 @@
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem,
             this.sairToolStripMenuItem,
-            this.pRODUTOToolStripMenuItem});
+            this.pRODUTOToolStripMenuItem,
+            this.cOMPRAToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(1156, 26);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             this.mainMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mainMenuStrip_ItemClicked_1);
-            // 
-            // visualizarToolStripMenuItem
-            // 
-            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.visualizarToolStripMenuItem.Text = "Visualizar";
-            this.visualizarToolStripMenuItem.Click += new System.EventHandler(this.visualizarToolStripMenuItem_Click);
             // 
             // pRODUTOToolStripMenuItem
             // 
@@ -125,6 +128,21 @@
             this.visualizarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.visualizarToolStripMenuItem1.Text = "Visualizar";
             this.visualizarToolStripMenuItem1.Click += new System.EventHandler(this.visualizarToolStripMenuItem1_Click);
+            // 
+            // cOMPRAToolStripMenuItem
+            // 
+            this.cOMPRAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem2});
+            this.cOMPRAToolStripMenuItem.Name = "cOMPRAToolStripMenuItem";
+            this.cOMPRAToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
+            this.cOMPRAToolStripMenuItem.Text = "COMPRA";
+            // 
+            // visualizarToolStripMenuItem2
+            // 
+            this.visualizarToolStripMenuItem2.Name = "visualizarToolStripMenuItem2";
+            this.visualizarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.visualizarToolStripMenuItem2.Text = "Visualizar";
+            this.visualizarToolStripMenuItem2.Click += new System.EventHandler(this.visualizarToolStripMenuItem2_Click);
             // 
             // FormPrincipal
             // 
@@ -165,5 +183,7 @@
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRODUTOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cOMPRAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem2;
     }
 }
