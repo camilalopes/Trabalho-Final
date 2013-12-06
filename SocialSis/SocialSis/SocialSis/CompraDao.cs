@@ -8,6 +8,9 @@ using MySql.Data.MySqlClient;
 
 namespace Dao
 {
+    /// <summary>
+    /// Classe responsável por realizar as operações na tabela "compra" no Banco de Dados Local
+    /// </summary>
     class CompraDao
     {
         public static readonly string TABELA = "compra";

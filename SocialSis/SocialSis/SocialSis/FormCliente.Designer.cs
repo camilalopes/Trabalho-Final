@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClienteProfessor));
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -57,10 +58,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 9);
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 18);
+            this.label7.Size = new System.Drawing.Size(198, 18);
             this.label7.TabIndex = 85;
             this.label7.Text = "Dados pessoais do Cliente";
             // 
@@ -68,7 +69,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 363);
+            this.label4.Location = new System.Drawing.Point(7, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(199, 16);
             this.label4.TabIndex = 83;
@@ -76,17 +77,18 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(12, 190);
+            this.txtEndereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.Location = new System.Drawing.Point(10, 376);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(188, 26);
+            this.txtEndereco.Size = new System.Drawing.Size(188, 22);
             this.txtEndereco.TabIndex = 82;
             // 
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
             this.lbEndereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndereco.Location = new System.Drawing.Point(10, 171);
+            this.lbEndereco.Location = new System.Drawing.Point(7, 355);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Size = new System.Drawing.Size(71, 16);
             this.lbEndereco.TabIndex = 81;
@@ -94,17 +96,18 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.Location = new System.Drawing.Point(10, 334);
+            this.txtCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(10, 124);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(188, 26);
+            this.txtCpf.Size = new System.Drawing.Size(188, 22);
             this.txtCpf.TabIndex = 80;
             // 
             // lbCpf
             // 
             this.lbCpf.AutoSize = true;
             this.lbCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCpf.Location = new System.Drawing.Point(10, 317);
+            this.lbCpf.Location = new System.Drawing.Point(7, 103);
             this.lbCpf.Name = "lbCpf";
             this.lbCpf.Size = new System.Drawing.Size(42, 16);
             this.lbCpf.TabIndex = 79;
@@ -112,17 +115,18 @@
             // 
             // txtTel
             // 
-            this.txtTel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(10, 142);
+            this.txtTel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Location = new System.Drawing.Point(10, 272);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(188, 26);
+            this.txtTel.Size = new System.Drawing.Size(188, 22);
             this.txtTel.TabIndex = 78;
             // 
             // lbTelefone1Clietne
             // 
             this.lbTelefone1Clietne.AutoSize = true;
             this.lbTelefone1Clietne.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefone1Clietne.Location = new System.Drawing.Point(10, 125);
+            this.lbTelefone1Clietne.Location = new System.Drawing.Point(7, 252);
             this.lbTelefone1Clietne.Name = "lbTelefone1Clietne";
             this.lbTelefone1Clietne.Size = new System.Drawing.Size(67, 16);
             this.lbTelefone1Clietne.TabIndex = 77;
@@ -130,17 +134,18 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(12, 289);
+            this.txtEmail.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(10, 324);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(188, 26);
+            this.txtEmail.Size = new System.Drawing.Size(188, 22);
             this.txtEmail.TabIndex = 76;
             // 
             // lbEmailCliente
             // 
             this.lbEmailCliente.AutoSize = true;
             this.lbEmailCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmailCliente.Location = new System.Drawing.Point(12, 270);
+            this.lbEmailCliente.Location = new System.Drawing.Point(7, 304);
             this.lbEmailCliente.Name = "lbEmailCliente";
             this.lbEmailCliente.Size = new System.Drawing.Size(49, 16);
             this.lbEmailCliente.TabIndex = 75;
@@ -150,7 +155,7 @@
             // 
             this.lbDataNascimento.AutoSize = true;
             this.lbDataNascimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDataNascimento.Location = new System.Drawing.Point(10, 77);
+            this.lbDataNascimento.Location = new System.Drawing.Point(7, 206);
             this.lbDataNascimento.Name = "lbDataNascimento";
             this.lbDataNascimento.Size = new System.Drawing.Size(138, 16);
             this.lbDataNascimento.TabIndex = 73;
@@ -158,17 +163,18 @@
             // 
             // txtRg
             // 
-            this.txtRg.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRg.Location = new System.Drawing.Point(12, 241);
+            this.txtRg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRg.Location = new System.Drawing.Point(10, 176);
+            this.txtRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(190, 26);
+            this.txtRg.Size = new System.Drawing.Size(190, 22);
             this.txtRg.TabIndex = 72;
             // 
             // lbRgCliente
             // 
             this.lbRgCliente.AutoSize = true;
             this.lbRgCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRgCliente.Location = new System.Drawing.Point(12, 222);
+            this.lbRgCliente.Location = new System.Drawing.Point(7, 155);
             this.lbRgCliente.Name = "lbRgCliente";
             this.lbRgCliente.Size = new System.Drawing.Size(39, 16);
             this.lbRgCliente.TabIndex = 71;
@@ -176,17 +182,18 @@
             // 
             // txtNome
             // 
-            this.txtNome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(10, 48);
+            this.txtNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(10, 72);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(188, 26);
+            this.txtNome.Size = new System.Drawing.Size(188, 22);
             this.txtNome.TabIndex = 70;
             // 
             // lbNomeCliente
             // 
             this.lbNomeCliente.AutoSize = true;
             this.lbNomeCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeCliente.Location = new System.Drawing.Point(10, 29);
+            this.lbNomeCliente.Location = new System.Drawing.Point(7, 52);
             this.lbNomeCliente.Name = "lbNomeCliente";
             this.lbNomeCliente.Size = new System.Drawing.Size(54, 16);
             this.lbNomeCliente.TabIndex = 69;
@@ -195,21 +202,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(280, 14);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(224, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 18);
+            this.label2.Size = new System.Drawing.Size(212, 18);
             this.label2.TabIndex = 87;
             this.label2.Text = "Clientes Alunos Registrados: ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvCliente
             // 
-            this.dgvCliente.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(283, 61);
+            this.dgvCliente.Location = new System.Drawing.Point(227, 52);
+            this.dgvCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(518, 299);
+            this.dgvCliente.Size = new System.Drawing.Size(482, 438);
             this.dgvCliente.TabIndex = 86;
             // 
             // lbSairSistema
@@ -218,7 +227,7 @@
             this.lbSairSistema.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSairSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSairSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbSairSistema.Location = new System.Drawing.Point(1097, 11);
+            this.lbSairSistema.Location = new System.Drawing.Point(1097, 12);
             this.lbSairSistema.Name = "lbSairSistema";
             this.lbSairSistema.Size = new System.Drawing.Size(103, 16);
             this.lbSairSistema.TabIndex = 92;
@@ -227,13 +236,17 @@
             // 
             // btSalvar
             // 
-            this.btSalvar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(10, 421);
+            this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.ForeColor = System.Drawing.Color.Black;
+            this.btSalvar.Location = new System.Drawing.Point(12, 466);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(125, 23);
+            this.btSalvar.Size = new System.Drawing.Size(188, 24);
             this.btSalvar.TabIndex = 94;
-            this.btSalvar.Text = "Cadastrar";
-            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Text = "Cadastrar Cliente";
+            this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // shapeContainer1
@@ -243,42 +256,46 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(818, 456);
+            this.shapeContainer1.Size = new System.Drawing.Size(721, 503);
             this.shapeContainer1.TabIndex = 95;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 248;
-            this.lineShape1.X2 = 249;
-            this.lineShape1.Y1 = 14;
-            this.lineShape1.Y2 = 424;
+            this.lineShape1.X1 = 215;
+            this.lineShape1.X2 = 212;
+            this.lineShape1.Y1 = 15;
+            this.lineShape1.Y2 = 491;
             // 
             // txtDataNasc
             // 
-            this.txtDataNasc.Location = new System.Drawing.Point(13, 96);
+            this.txtDataNasc.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataNasc.Location = new System.Drawing.Point(12, 427);
+            this.txtDataNasc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
-            this.txtDataNasc.Size = new System.Drawing.Size(68, 20);
+            this.txtDataNasc.Size = new System.Drawing.Size(68, 22);
             this.txtDataNasc.TabIndex = 97;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
             // txtPrevPag
             // 
-            this.txtPrevPag.Location = new System.Drawing.Point(12, 378);
+            this.txtPrevPag.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrevPag.Location = new System.Drawing.Point(10, 228);
+            this.txtPrevPag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrevPag.Mask = "00/00/0000";
             this.txtPrevPag.Name = "txtPrevPag";
-            this.txtPrevPag.Size = new System.Drawing.Size(72, 20);
+            this.txtPrevPag.Size = new System.Drawing.Size(74, 22);
             this.txtPrevPag.TabIndex = 98;
             this.txtPrevPag.ValidatingType = typeof(System.DateTime);
             // 
             // FormClienteProfessor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(818, 456);
+            this.ClientSize = new System.Drawing.Size(721, 503);
             this.Controls.Add(this.txtPrevPag);
             this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.btSalvar);
@@ -301,9 +318,11 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbNomeCliente);
             this.Controls.Add(this.shapeContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormClienteProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente Professor";

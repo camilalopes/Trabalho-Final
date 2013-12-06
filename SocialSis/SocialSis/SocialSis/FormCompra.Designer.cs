@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompra));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,10 +51,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 21);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 18);
+            this.label1.Size = new System.Drawing.Size(134, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Realizar Compra: ";
             // 
@@ -61,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 68);
+            this.label2.Location = new System.Drawing.Point(7, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 16);
             this.label2.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 213);
+            this.label3.Location = new System.Drawing.Point(7, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 16);
             this.label3.TabIndex = 4;
@@ -79,9 +80,11 @@
             // 
             // txtProduto
             // 
-            this.txtProduto.Location = new System.Drawing.Point(12, 232);
+            this.txtProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProduto.Location = new System.Drawing.Point(10, 213);
+            this.txtProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(184, 20);
+            this.txtProduto.Size = new System.Drawing.Size(184, 22);
             this.txtProduto.TabIndex = 5;
             this.txtProduto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProduto_KeyUp);
             // 
@@ -89,7 +92,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(217, 234);
+            this.label4.Location = new System.Drawing.Point(7, 349);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 7;
@@ -97,28 +100,37 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(220, 253);
+            this.txtQuantidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidade.Location = new System.Drawing.Point(10, 369);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(50, 20);
+            this.txtQuantidade.Size = new System.Drawing.Size(63, 22);
             this.txtQuantidade.TabIndex = 8;
             // 
             // btSalvar
             // 
-            this.btSalvar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(12, 423);
+            this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Location = new System.Drawing.Point(10, 466);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btSalvar.Size = new System.Drawing.Size(188, 24);
             this.btSalvar.TabIndex = 9;
-            this.btSalvar.Text = "Salvar";
-            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Text = "Salvar Compra";
+            this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // dgvCompra
             // 
+            this.dgvCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompra.Location = new System.Drawing.Point(363, 53);
+            this.dgvCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCompra.Location = new System.Drawing.Point(227, 52);
+            this.dgvCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.Size = new System.Drawing.Size(448, 379);
+            this.dgvCompra.Size = new System.Drawing.Size(482, 440);
             this.dgvCompra.TabIndex = 10;
             // 
             // shapeContainer1
@@ -128,35 +140,38 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(829, 460);
+            this.shapeContainer1.Size = new System.Drawing.Size(721, 499);
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 322;
-            this.lineShape1.X2 = 325;
-            this.lineShape1.Y1 = 16;
-            this.lineShape1.Y2 = 445;
+            this.lineShape1.X1 = 215;
+            this.lineShape1.X2 = 212;
+            this.lineShape1.Y1 = 15;
+            this.lineShape1.Y2 = 491;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(330, 18);
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(224, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 18);
+            this.label5.Size = new System.Drawing.Size(170, 18);
             this.label5.TabIndex = 12;
             this.label5.Text = "Compras Registradas: ";
             // 
             // listaProduto
             // 
             this.listaProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaProduto.FormattingEnabled = true;
-            this.listaProduto.Location = new System.Drawing.Point(12, 253);
+            this.listaProduto.ItemHeight = 16;
+            this.listaProduto.Location = new System.Drawing.Point(10, 233);
+            this.listaProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listaProduto.Name = "listaProduto";
-            this.listaProduto.Size = new System.Drawing.Size(184, 91);
+            this.listaProduto.Size = new System.Drawing.Size(184, 112);
             this.listaProduto.TabIndex = 13;
             this.listaProduto.Visible = false;
             this.listaProduto.Click += new System.EventHandler(this.listaProduto_Click);
@@ -164,36 +179,44 @@
             // listaCliente
             // 
             this.listaCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaCliente.FormattingEnabled = true;
-            this.listaCliente.Location = new System.Drawing.Point(12, 111);
+            this.listaCliente.ItemHeight = 16;
+            this.listaCliente.Location = new System.Drawing.Point(12, 93);
+            this.listaCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listaCliente.Name = "listaCliente";
-            this.listaCliente.Size = new System.Drawing.Size(184, 91);
+            this.listaCliente.Size = new System.Drawing.Size(182, 96);
             this.listaCliente.TabIndex = 15;
             this.listaCliente.Visible = false;
             this.listaCliente.Click += new System.EventHandler(this.listaCliente_Click);
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(12, 90);
+            this.txtCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(10, 76);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(184, 20);
+            this.txtCliente.Size = new System.Drawing.Size(184, 22);
             this.txtCliente.TabIndex = 14;
             this.txtCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCliente_KeyUp);
             // 
             // chkPago
             // 
             this.chkPago.AutoSize = true;
-            this.chkPago.Location = new System.Drawing.Point(18, 383);
+            this.chkPago.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPago.Location = new System.Drawing.Point(42, 425);
+            this.chkPago.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkPago.Name = "chkPago";
-            this.chkPago.Size = new System.Drawing.Size(15, 14);
+            this.chkPago.Size = new System.Drawing.Size(48, 19);
             this.chkPago.TabIndex = 16;
+            this.chkPago.Text = "Sim";
             this.chkPago.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 364);
+            this.label6.Location = new System.Drawing.Point(7, 405);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 17;
@@ -201,9 +224,10 @@
             // 
             // FormCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 460);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(721, 499);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chkPago);
             this.Controls.Add(this.listaCliente);
@@ -219,8 +243,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCompra";
-            this.Text = "FormCompra";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Comprar";
             this.Load += new System.EventHandler(this.FormCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             this.ResumeLayout(false);

@@ -17,7 +17,11 @@ namespace SocialSis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+
+            FormPrincipal janelaPrincipal = new FormPrincipal();
+            janelaPrincipal.Visible = false;
+            Application.Run(); // <-- ATENÇÃO!
+            
         }
     }
 }

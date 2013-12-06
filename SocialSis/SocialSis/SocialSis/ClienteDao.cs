@@ -9,6 +9,9 @@ using System.Collections;
 
 namespace Dao
 {
+    /// <summary>
+    /// Classe responsável por realizar as operações com a tabela "cliente" no Banco de Dados local
+    /// </summary>
     class ClienteDao
     {
         public static readonly string TABELA = "cliente";

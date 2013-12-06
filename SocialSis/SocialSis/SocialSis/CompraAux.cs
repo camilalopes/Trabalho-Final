@@ -8,6 +8,9 @@ namespace SocialSis
 {
     class CompraAux
     {
+        /// <summary>
+        /// Classe para auxiliar a representação de uma compra no sistema
+        /// </summary>
         private DateTime dataPagamento;
         private DateTime dataCompra;
         private double total;

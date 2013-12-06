@@ -7,6 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace Dao
 {
+    /// <summary>
+    /// Classe responsável por fazer a conexão com o Banco de Dados local na maquina.
+    /// </summary>
     class BancoDados
     {
         private static MySqlConnection conexao;
@@ -20,7 +23,7 @@ namespace Dao
                 string servidor = "127.0.0.1";
                 string banco = BANCO;
                 string usuario = "root";
-                string senha = "cabanbina";
+                string senha = "";
 
                 // String de conexão.
                 string strConexao = "SERVER=" + servidor
