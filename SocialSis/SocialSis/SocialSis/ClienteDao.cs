@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SocialSis;
 using MySql.Data.MySqlClient;
-using System.Collections;
+
 
 namespace Dao
 {
@@ -246,6 +246,56 @@ namespace Dao
 
             return resposta;
 
+        }
+
+
+        public static Cliente buscarPorCpf(Cliente cliente)
+        {
+            // Reposta padrão.
+            Cliente resposta = null;
+
+            if (cliente.Cpf != 0)
+            {
+
+                MySqlCommand cmd;
+
+                string sql = "SELECT * FROM " + TABELA
+                    + " WHERE cpf = @cpf;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@cpf",
+                    cliente.Cpf );
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    // adiciona o respectivo objeto cliente, construído
+                    // com os dados de retorno, à coleção de items.
+                    resposta = (
+                        new Cliente(
+                            leitor["nome"].ToString(), ulong.Parse(leitor["cpf"].ToString()), leitor["rg"].ToString(),
+                             leitor["email"].ToString(), ulong.Parse(leitor["tel"].ToString()), leitor["endereco"].ToString(),
+                            DateTime.Parse(leitor["prevPagamento"].ToString()), DateTime.Parse(leitor["dataNasc"].ToString())
+                            ));
+
+
+                }
+
+                // Libera recursos de memória.
+                leitor.Close();
+            }
+
+            return resposta;
         }
     }
 }

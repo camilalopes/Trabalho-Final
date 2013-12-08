@@ -24,6 +24,18 @@ namespace GUI
             logout();
                             
         }
+
+        //cria uma propriedade que permite pegar um boleano
+        //isso é usado para saber se o usuario logado é adm ou não
+        private bool admAux;
+
+        public bool AdmAux
+        {
+            get { return admAux; }
+            set { admAux = value; }
+        }
+
+
       
 
         /// <summary>
@@ -45,6 +57,12 @@ namespace GUI
         /// <param name="e"></param>
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            //Caso o usuario logado não seja um administrador
+            //a parte de operações com usuario será desabilitada
+            if (admAux == false)
+            {
+                USUARIOToolStripMenuItem.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -109,6 +127,24 @@ namespace GUI
 
             // ... e exibe a janela de login.
             FormLogin.abrirJanelaLogin();
+        }
+
+        private void visualizarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FormUsuario fu = new FormUsuario();
+            fu.Show();
+        }
+
+        private void visualizarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            FormFornecedor ff = new FormFornecedor();
+            ff.Show();
+        }
+
+        private void visualizarToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            FormInsumo fi = new FormInsumo();
+            fi.Show();
         }
     }
 }

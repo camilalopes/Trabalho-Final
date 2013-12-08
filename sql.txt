@@ -4,9 +4,11 @@ use cantina;
 
 create table cliente (cpf bigint unsigned primary key not null, rg varchar(14), nome varchar(200) not null, email varchar(200), tel bigint, dataNasc datetime, endereco varchar(300), prevPagamento datetime );
 
-create table compra (id int unsigned primary key not null auto_increment, dataCompra datetime, total double, dataPagamento datetime, fk_cliente int unsigned not null  references cliente on delete set null, key (fk_cliente));
+create table usuario(login varchar(15) primary key, senha varchar(15), nome varchar(50), telefone bigint, email varchar(40), adm bool);
 
-create table produto(id int unsigned primary key not null auto_increment, descricao varchar(50), precoUnitario double);
+create table compra (id int unsigned primary key not null auto_increment, dataCompra datetime, total double, dataPagamento datetime, fk_cliente int unsigned not null  references cliente on delete set null, fk_usuario varchar(15) not null references usuario on delete set null, key (fk_cliente), key (fk_usuario));
+
+create table produto(id int unsigned primary key not null auto_increment, descricao varchar(50) unique, precoUnitario double);
 
 create table itemProduto(id int unsigned primary key not null auto_increment, quantidade int unsigned, fk_compra int unsigned not null references compra on delete set null, fk_produto int unsigned not null references produto on delete set null, key(fk_compra), key(fk_produto));
 
@@ -17,3 +19,5 @@ create table notaFiscal(nBoleto bigint unsigned primary key not null, precoTotal
 create table insumo(id int unsigned primary key not null auto_increment, descricao varchar(50), precoUnitario double);
 
 create table itemInsumo(id int unsigned primary key not null auto_increment, quantidade int, fk_insumo int unsigned not null references insumo, fk_notafiscal bigint not null references notaFiscal, key (fk_insumo), key (fk_notafiscal));
+
+insert into usuario (login, senha, adm) values('camila', '1234', true );

@@ -33,7 +33,7 @@ namespace GUI
             dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
         }
 
-        private void btSalvar_Click(object sender, EventArgs e)
+        private void btSalvar_Click_1(object sender, EventArgs e)
         {
             FornecedorDao.salvar(new Fornecedor(ulong.Parse(txtCnpj.Text), txtNome.Text,
                 txtEndereco.Text, txtTelefone.Text, txtEmail.Text));
@@ -41,7 +41,6 @@ namespace GUI
             dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
 
             Restaurar();
-
 
         }
     }

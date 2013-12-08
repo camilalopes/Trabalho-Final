@@ -13,12 +13,32 @@ namespace SocialSis
         private DateTime dataCompra;
         private DateTime dataVencimento;
         private double precoTotal;
+        private Fornecedor fornecedor;
 
+        public NotaFiscal()
+        { }
+
+        public NotaFiscal(ulong nBoleto, DateTime dataPamento, DateTime dataCompra, DateTime dataVencimento,
+            double precoTotal, Fornecedor fornecedor)
+        {
+            NBoleto = nBoleto;
+            DataPagamento = dataPagamento;
+            DataCompra = dataCompra;
+            DataVencimento = dataVencimento;
+            PrecoTotal = precoTotal;
+            Fornecedor = fornecedor;
+        }
 
         public ulong NBoleto
         {
             get { return nBoleto; }
             set { nBoleto = value; }
+        }
+
+        public Fornecedor Fornecedor
+        {
+            get{ return fornecedor; }
+            set{ fornecedor = value;}
         }
 
         public DateTime DataPagamento
@@ -37,6 +57,12 @@ namespace SocialSis
         {
             get { return precoTotal; }
             set { precoTotal = value; }
+        }
+
+        public DateTime DataVencimento
+        {
+            get { return dataVencimento; }
+            set { dataVencimento = value; }
         }
 
     }

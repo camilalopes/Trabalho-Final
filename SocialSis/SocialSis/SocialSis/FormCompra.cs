@@ -17,6 +17,16 @@ namespace GUI
     /// </summary>
     public partial class FormCompra : Form
     {
+        //cria uma propriedade que permite pegar uma string
+        //e guardar o login do usuario
+        private string loginAux;
+
+        public string LoginAux
+        {
+            get { return loginAux; }
+            set { loginAux = value; }
+        }
+
      
         DateTime dataCompra = DateTime.Now;
         //Atributo responsavel por registrar a data de compra
@@ -60,17 +70,21 @@ namespace GUI
                 dataPagamento = DateTime.Now;
             }
 
-            //double total = compra.calcularTotal(ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text)), int.Parse(txtQuantidade.Text));
-
             //Instanciação de objeto para salva-lo no Banco de Dados
             compra = new Compra(0, dataPagamento, dataCompra, ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text)).PrecoUnitario * int.Parse(txtQuantidade.Text),
-                ClienteDao.buscarPorNome(new Cliente(txtCliente.Text)));
+                ClienteDao.buscarPorNome(new Cliente(txtCliente.Text))/*, UsuarioDao.BuscarPorLogin(new Usuario(nome))*/);
             
             //Invocação do metodos para salvar o objeto acima
             CompraDao.salvar(compra);
 
-            ///Não sei para que serve <<
-            ItemProdutoDao.salvar(new ItemProduto(0, int.Parse(txtQuantidade.Text), compra, ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text))));
+            int idUltimaCompra;
+
+            idUltimaCompra = CompraDao.buscarTodos(new Compra()).Count;
+
+            ///Não sei para que serve 
+            ItemProdutoDao.salvar(new ItemProduto(0, int.Parse(txtQuantidade.Text),
+                CompraDao.BuscarPorId(new Compra(idUltimaCompra)),
+                ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text))));
         }
 
         /// <summary>

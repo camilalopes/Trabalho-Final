@@ -17,10 +17,23 @@ namespace SocialSis
         private int quantidade;
         private string produto;
         private string cliente;
+        private int fk_cliente;
+        private int id;
+        /*private string usuario;*/
 
         public CompraAux() { }
 
-        public CompraAux(DateTime dataCompra, string cliente, string produto, int quantidade, DateTime dataPagamento, double total)
+        public CompraAux(int id, DateTime dataPagamento, DateTime dataCompra, double total, int fK_cliente/* Usuario usuario*/)
+        {
+            SetId(id);
+            DataCompra = dataCompra;
+            DataPagamento = dataPagamento;
+            Total = total;
+            Cliente = cliente;
+           // Usuario = usuario;
+        }
+
+        public CompraAux(DateTime dataCompra, string cliente, string produto, int quantidade, DateTime dataPagamento, double total/* string usuario*/)
         {
             DataCompra = dataCompra;
             Cliente = cliente;
@@ -28,6 +41,8 @@ namespace SocialSis
             Quantidade = quantidade;
             DataPagamento = dataPagamento;
             Total = total;
+            Fk_cliente = fk_cliente;
+            /* Usuario = usuario;*/
             
         }
 
@@ -66,6 +81,37 @@ namespace SocialSis
             get { return  produto; }
             set { produto = value; }
         }
+
+        public int Fk_cliente
+        {
+            get { return fk_cliente; }
+            set { fk_cliente = value; }
+        }
+        
+
+        /// <summary>
+        /// Metodo responsável por setar valor para o id da compra
+        /// </summary>
+        /// <param name="id"></param>
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
+        /// <summary>
+        /// Metodo responsavel por retornar o valor do id da compra
+        /// </summary>
+        /// <returns></returns>
+        public int GetId()
+        {
+            return this.id;
+        }
+
+        /* public string Usuario
+         {
+             get { return usuario; }
+             set { usuario = value; }
+         }*/
 
 
     }

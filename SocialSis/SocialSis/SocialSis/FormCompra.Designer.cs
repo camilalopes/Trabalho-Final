@@ -35,7 +35,6 @@
             this.txtProduto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -45,6 +44,7 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.chkPago = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,30 +107,16 @@
             this.txtQuantidade.Size = new System.Drawing.Size(63, 22);
             this.txtQuantidade.TabIndex = 8;
             // 
-            // btSalvar
-            // 
-            this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(10, 466);
-            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(188, 24);
-            this.btSalvar.TabIndex = 9;
-            this.btSalvar.Text = "Salvar Compra";
-            this.btSalvar.UseVisualStyleBackColor = false;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
-            // 
             // dgvCompra
             // 
             this.dgvCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCompra.Location = new System.Drawing.Point(227, 52);
+            this.dgvCompra.Location = new System.Drawing.Point(239, 46);
             this.dgvCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.Size = new System.Drawing.Size(482, 440);
+            this.dgvCompra.Size = new System.Drawing.Size(470, 440);
             this.dgvCompra.TabIndex = 10;
             // 
             // shapeContainer1
@@ -140,7 +126,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(721, 499);
+            this.shapeContainer1.Size = new System.Drawing.Size(721, 503);
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
@@ -156,7 +142,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(224, 10);
+            this.label5.Location = new System.Drawing.Point(224, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 18);
             this.label5.TabIndex = 12;
@@ -222,12 +208,26 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Compra Paga:";
             // 
+            // btSalvar
+            // 
+            this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Location = new System.Drawing.Point(10, 466);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(188, 24);
+            this.btSalvar.TabIndex = 9;
+            this.btSalvar.Text = "Salvar Compra";
+            this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
             // FormCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(721, 499);
+            this.ClientSize = new System.Drawing.Size(721, 503);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chkPago);
             this.Controls.Add(this.listaCliente);
@@ -266,7 +266,6 @@
         private System.Windows.Forms.TextBox txtProduto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtQuantidade;
-        private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.DataGridView dgvCompra;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
@@ -276,5 +275,6 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.CheckBox chkPago;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btSalvar;
     }
 }

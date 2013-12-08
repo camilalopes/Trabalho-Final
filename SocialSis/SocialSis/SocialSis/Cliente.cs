@@ -73,6 +73,11 @@ namespace SocialSis
             Nome = nome;
         }
 
+        public Cliente(ulong cpf)
+        {
+            Cpf = cpf;
+        }
+
         /// <summary>
         /// Propriedade responsável por guardar e retornar valores do atributo nome do cliente
         /// </summary>

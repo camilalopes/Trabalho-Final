@@ -38,8 +38,16 @@
             this.visualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fORNECEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.USUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtSairSistema = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.nOTASFISCAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNSUMOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainMenuStrip.SuspendLayout();
@@ -79,7 +87,11 @@
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem,
             this.pRODUTOToolStripMenuItem,
-            this.cOMPRAToolStripMenuItem});
+            this.cOMPRAToolStripMenuItem,
+            this.fORNECEDORToolStripMenuItem,
+            this.nOTASFISCAISToolStripMenuItem,
+            this.iNSUMOToolStripMenuItem,
+            this.USUARIOToolStripMenuItem});
             this.mainMenuStrip.Name = "mainMenuStrip";
             // 
             // pRODUTOToolStripMenuItem
@@ -108,6 +120,32 @@
             resources.ApplyResources(this.visualizarToolStripMenuItem2, "visualizarToolStripMenuItem2");
             this.visualizarToolStripMenuItem2.Click += new System.EventHandler(this.visualizarToolStripMenuItem2_Click);
             // 
+            // fORNECEDORToolStripMenuItem
+            // 
+            this.fORNECEDORToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem4});
+            this.fORNECEDORToolStripMenuItem.Name = "fORNECEDORToolStripMenuItem";
+            resources.ApplyResources(this.fORNECEDORToolStripMenuItem, "fORNECEDORToolStripMenuItem");
+            // 
+            // visualizarToolStripMenuItem4
+            // 
+            this.visualizarToolStripMenuItem4.Name = "visualizarToolStripMenuItem4";
+            resources.ApplyResources(this.visualizarToolStripMenuItem4, "visualizarToolStripMenuItem4");
+            this.visualizarToolStripMenuItem4.Click += new System.EventHandler(this.visualizarToolStripMenuItem4_Click);
+            // 
+            // USUARIOToolStripMenuItem
+            // 
+            this.USUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem3});
+            this.USUARIOToolStripMenuItem.Name = "USUARIOToolStripMenuItem";
+            resources.ApplyResources(this.USUARIOToolStripMenuItem, "USUARIOToolStripMenuItem");
+            // 
+            // visualizarToolStripMenuItem3
+            // 
+            this.visualizarToolStripMenuItem3.Name = "visualizarToolStripMenuItem3";
+            resources.ApplyResources(this.visualizarToolStripMenuItem3, "visualizarToolStripMenuItem3");
+            this.visualizarToolStripMenuItem3.Click += new System.EventHandler(this.visualizarToolStripMenuItem3_Click);
+            // 
             // BtSairSistema
             // 
             this.BtSairSistema.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -120,6 +158,31 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            // 
+            // nOTASFISCAISToolStripMenuItem
+            // 
+            this.nOTASFISCAISToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem5});
+            this.nOTASFISCAISToolStripMenuItem.Name = "nOTASFISCAISToolStripMenuItem";
+            resources.ApplyResources(this.nOTASFISCAISToolStripMenuItem, "nOTASFISCAISToolStripMenuItem");
+            // 
+            // visualizarToolStripMenuItem5
+            // 
+            this.visualizarToolStripMenuItem5.Name = "visualizarToolStripMenuItem5";
+            resources.ApplyResources(this.visualizarToolStripMenuItem5, "visualizarToolStripMenuItem5");
+            // 
+            // iNSUMOToolStripMenuItem
+            // 
+            this.iNSUMOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem6});
+            this.iNSUMOToolStripMenuItem.Name = "iNSUMOToolStripMenuItem";
+            resources.ApplyResources(this.iNSUMOToolStripMenuItem, "iNSUMOToolStripMenuItem");
+            // 
+            // visualizarToolStripMenuItem6
+            // 
+            this.visualizarToolStripMenuItem6.Name = "visualizarToolStripMenuItem6";
+            resources.ApplyResources(this.visualizarToolStripMenuItem6, "visualizarToolStripMenuItem6");
+            this.visualizarToolStripMenuItem6.Click += new System.EventHandler(this.visualizarToolStripMenuItem6_Click);
             // 
             // FormPrincipal
             // 
@@ -158,5 +221,13 @@
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem2;
         private System.Windows.Forms.PictureBox BtSairSistema;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem USUARIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem fORNECEDORToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem nOTASFISCAISToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem iNSUMOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem6;
     }
 }

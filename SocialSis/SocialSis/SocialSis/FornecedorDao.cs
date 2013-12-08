@@ -112,7 +112,7 @@ namespace Dao
                 fornecedores.Add(
                     new Fornecedor(
                          ulong.Parse(leitor["cnpj"].ToString()), leitor["nome"].ToString(), leitor["endereco"].ToString(),
-                         leitor["email"].ToString(), leitor["tel"].ToString() 
+                         leitor["email"].ToString(), leitor["tel"].ToString()
                         ));
 
 

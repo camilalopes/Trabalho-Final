@@ -81,6 +81,41 @@ namespace Dao
 
         }
 
+        public static ArrayList buscarTodos(Compra compra)
+        {
+            ArrayList compras = new ArrayList();
+
+            MySqlCommand cmd;
+            string sql = "SELECT * FROM " + TABELA + ";";
+
+
+            // Associação do comando à conexão.
+            cmd = new MySqlCommand(sql, BancoDados.RecuperarConexao());
+
+            // Preparação da consulta.
+            cmd.Prepare();
+
+            // Execução da sentença SQL, com dados de retorno
+            // associados a um objeto para posterior leitura.
+            MySqlDataReader leitor = cmd.ExecuteReader();
+
+
+            while (leitor.Read())
+            {
+                compras.Add(
+                    new CompraAux(int.Parse(leitor["id"].ToString()), DateTime.Parse(leitor["dataPagamento"].ToString()),
+                        DateTime.Parse(leitor["dataCompra"].ToString()),
+                        double.Parse(leitor["total"].ToString()),
+                        int.Parse(leitor["fk_cliente"].ToString())));
+            }
+            // Libera recursos de memória.
+            leitor.Close();
+
+
+            return compras;
+
+        }
+
         public static ArrayList buscarTodos(CompraAux cAux)
         {
             ArrayList compras = new ArrayList();
@@ -115,6 +150,41 @@ namespace Dao
 
 
             return compras;
+
+        }
+
+        public static Compra BuscarPorId(Compra compra)
+        {
+            Compra resposta = null;
+            MySqlCommand cmd;
+            string sql = "SELECT * FROM " + TABELA + " WHERE id = @id";
+
+
+            // Associação do comando à conexão.
+            cmd = new MySqlCommand(sql, BancoDados.RecuperarConexao());
+
+            cmd.Parameters.AddWithValue("@id", compra.GetId());
+
+            // Preparação da consulta.
+            cmd.Prepare();
+
+            // Execução da sentença SQL, com dados de retorno
+            // associados a um objeto para posterior leitura.
+            MySqlDataReader leitor = cmd.ExecuteReader();
+
+
+            if (leitor.Read())
+            {
+                    resposta = new Compra(int.Parse(leitor["id"].ToString()), DateTime.Parse(leitor["dataPagamento"].ToString()),
+                        DateTime.Parse(leitor["dataCompra"].ToString()),
+                        double.Parse(leitor["total"].ToString()),
+                        ClienteDao.buscarPorCpf(new Cliente(ulong.Parse(leitor["fk_cliente"].ToString()))));
+            }
+            // Libera recursos de memória.
+            leitor.Close();
+
+
+            return resposta;
 
         }
 

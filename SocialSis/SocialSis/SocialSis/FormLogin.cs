@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dao;
+using SocialSis;
 
 namespace GUI
 {
@@ -15,6 +17,7 @@ namespace GUI
     /// </summary>
     public partial class FormLogin : Form
     {
+        private FormPrincipal fp;
         private static FormLogin janelaLogin;
         //Atributo para auxiliar no jogo de telas
 
@@ -34,12 +37,35 @@ namespace GUI
         /// <param name="e"></param>
         private void btLogin_Click(object sender, EventArgs e)
         {
-           
+
+            //Busca o usuario no BD de acordo com a senha e o login informados
+            Usuario resposta = UsuarioDao.BuscarPorLoginESenha(new Usuario(txtLogin.Text, txtSenha.Text));
+
+            // se houver uma resposta a form principal é chamada
+            if (resposta != null)
+            {
                 // Abre a janela principal
-                new FormPrincipal().Show();
+                FormPrincipal fp = new FormPrincipal();
+                FormCompra fc;
+
 
                 // "Fecha" janela de login
                 fecharJanelaLogin();
+
+                //passa a propiedade de adm do usuario para a FormPrincipal
+                fp = new FormPrincipal();
+                fp.AdmAux = resposta.Adm;
+                fc = new FormCompra();
+                fc.LoginAux = txtLogin.Text;
+                fp.Show();
+
+
+            }
+            else
+                //caso contrario a mensagem abaixo é ixibida
+                MessageBox.Show("Este usuario e/ou senha, não existem !!");
+
+           
             
         }
 
@@ -89,8 +115,28 @@ namespace GUI
         {
 
         }
+
+        private void txtSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                Usuario resposta = UsuarioDao.BuscarPorLoginESenha(new Usuario(txtLogin.Text, txtSenha.Text));
+
+
+                if (resposta != null)
+                {
+
+                    fp = new FormPrincipal();
+                    fp.AdmAux = resposta.Adm;
+                    // fp.LoginAux = resposta.Login;
+                    fp.Show();
+
+                }
+                else
+                    MessageBox.Show("Este usuario e/ou senha, não existem !!");
+            }
+        }
+        }
     }
 
-     
-}
 

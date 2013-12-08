@@ -65,3 +65,6 @@ F:\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\SocialSis.csproj.Gener
 F:\Trabalho-Final\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.exe
 F:\Trabalho-Final\SocialSis\SocialSis\SocialSis\bin\Debug\SocialSis.pdb
 F:\Trabalho-Final\SocialSis\SocialSis\SocialSis\bin\Debug\MySql.Data.dll
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormUsuario.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormFornecedor.resources
+C:\Users\Camila\Desktop\Trabalho-Final\SocialSis\SocialSis\SocialSis\obj\Debug\GUI.FormInsumo.resources

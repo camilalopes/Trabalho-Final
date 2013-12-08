@@ -11,27 +11,38 @@ namespace SocialSis
     /// </summary>
     class Compra
     {
-        private int id;
         //Atributo resposável por guardar o id da compra
+        private int id;
 
-        private DateTime dataPagamento;
         //Atributo responsavel por guardar a data de pagamento da compra
+        private DateTime dataPagamento;
 
-        private DateTime dataCompra;
         //Atributo responsável por guardar a data de compra 
+        private DateTime dataCompra;
 
-        private double total;
         //Atributo responsavel por guardar o preço total da compra
+        private double total;
 
-        private Cliente cliente;
         //Atributo responsavel por guardar o cliente que fez a compra
+        private Cliente cliente;
 
-        //Não falta guardar o produto tbm não????
+        //Atributo responsavel por guardar o usuario que fez a compra
+       // private Usuario usuario;
 
         /// <summary>
         /// Construtor padrão da classe
         /// </summary>
         public Compra() { }
+
+        public Compra(int id)
+        {
+            SetId(id);
+        }
+
+        public Compra(DateTime dataCompra)
+        {
+            DataCompra = dataCompra;
+        }
 
         /// <summary>
         /// Construtor sobrecarregado da classe, todos os atributos como parametro
@@ -41,13 +52,14 @@ namespace SocialSis
         /// <param name="dataCompra"></param>
         /// <param name="total"></param>
         /// <param name="cliente"></param>
-        public Compra(int id, DateTime dataPagamento, DateTime dataCompra, double total, Cliente cliente)
+        public Compra(int id, DateTime dataPagamento, DateTime dataCompra, double total, Cliente cliente/* Usuario usuario*/)
         {
             SetId(id);
             DataCompra = dataCompra;
             DataPagamento = dataPagamento;
             Total = total;
             Cliente = cliente;
+           // Usuario = usuario;
         }
 
         /// <summary>
@@ -78,7 +90,7 @@ namespace SocialSis
         }
 
         /// <summary>
-        /// Propriedade responsável por guardar e retornar valores do atributo da data de pagamento da compra
+        /// Propriedade responsável por setar e retornar valores do atributo da data de pagamento da compra
         /// </summary>
         public DateTime DataPagamento
         {
@@ -87,7 +99,7 @@ namespace SocialSis
         }
 
         /// <summary>
-        /// Propriedade responsável por guardar e retornar valores do attributo preço total da compra
+        /// Propriedade responsável por setar e retornar valores do attributo preço total da compra
         /// </summary>
         public double Total
         {
@@ -96,13 +108,22 @@ namespace SocialSis
         }
 
         /// <summary>
-        /// Propriedade responsável por guardar e retornar valores do atributo cliente da compra
+        /// Propriedade responsável por setar e retornar valores do atributo cliente da compra
         /// </summary>
         public Cliente Cliente
         {
             get { return cliente; }
             set { cliente = value; }
         }
+
+        /// <summary>
+        /// Propriedade responsável por setar e retornar valores do atributo usuario que realizou a compra
+        /// </summary>
+       /* public Usuario Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }*/
 
         /// <summary>
         /// Metodo responsavel por calcular o valor total da compra, produto e quantidade como parametros
