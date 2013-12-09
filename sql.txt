@@ -14,10 +14,10 @@ create table itemProduto(id int unsigned primary key not null auto_increment, qu
 
 create table fornecedor(cnpj bigint unsigned primary key not null, tel varchar(15), email varchar(150), nome varchar(200), endereco varchar(255));
 
-create table notaFiscal(nBoleto bigint unsigned primary key not null, precoTotal double, dataPagamento datetime, dataVencimento datetime, dataCompra datetime, fk_fornecedor bigint unsigned not null references fornecedor, key (fk_fornecedor));
+create table notaFiscal(id int unsigned primary key not null auto_increment, nBoleto bigint unsigned, precoTotal double, dataPagamento datetime, dataVencimento datetime, dataCompra datetime, fk_fornecedor bigint unsigned not null references fornecedor, key (fk_fornecedor));
 
 create table insumo(id int unsigned primary key not null auto_increment, descricao varchar(50), precoUnitario double);
 
-create table itemInsumo(id int unsigned primary key not null auto_increment, quantidade int, fk_insumo int unsigned not null references insumo, fk_notafiscal bigint not null references notaFiscal, key (fk_insumo), key (fk_notafiscal));
+create table itemInsumo(id int unsigned primary key not null auto_increment, quantidade int, fk_insumo int unsigned not null references insumo, fk_notafiscal int not null references notaFiscal, key (fk_insumo), key (fk_notafiscal));
 
 insert into usuario (login, senha, adm) values('camila', '1234', true );

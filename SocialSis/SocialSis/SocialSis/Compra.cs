@@ -29,6 +29,8 @@ namespace SocialSis
         //Atributo responsavel por guardar o usuario que fez a compra
        // private Usuario usuario;
 
+        private Usuario usuario;
+
         /// <summary>
         /// Construtor padrão da classe
         /// </summary>
@@ -52,14 +54,14 @@ namespace SocialSis
         /// <param name="dataCompra"></param>
         /// <param name="total"></param>
         /// <param name="cliente"></param>
-        public Compra(int id, DateTime dataPagamento, DateTime dataCompra, double total, Cliente cliente/* Usuario usuario*/)
+        public Compra(int id, DateTime dataPagamento, DateTime dataCompra, double total, Cliente cliente, Usuario usuario)
         {
             SetId(id);
             DataCompra = dataCompra;
             DataPagamento = dataPagamento;
             Total = total;
             Cliente = cliente;
-           // Usuario = usuario;
+           Usuario = usuario;
         }
 
         /// <summary>
@@ -119,11 +121,11 @@ namespace SocialSis
         /// <summary>
         /// Propriedade responsável por setar e retornar valores do atributo usuario que realizou a compra
         /// </summary>
-       /* public Usuario Usuario
+        public Usuario Usuario
         {
             get { return usuario; }
             set { usuario = value; }
-        }*/
+        }
 
         /// <summary>
         /// Metodo responsavel por calcular o valor total da compra, produto e quantidade como parametros

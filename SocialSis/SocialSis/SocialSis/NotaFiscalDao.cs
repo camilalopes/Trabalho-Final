@@ -19,7 +19,7 @@ namespace Dao
             string sql;
 
                 sql = "INSERT INTO " + TABELA
-                    + " VALUES (@nBoleto, @precoTotal, @dataPagamento, @dataVencimento , @dataCompra"
+                    + " VALUES (default, @nBoleto, @precoTotal, @dataPagamento, @dataVencimento , @dataCompra"
                     + ", @fk_fornecedor);";
 
                 // Associação do comando à conexão.
@@ -55,9 +55,9 @@ namespace Dao
 
         }
 
-        /*public static ArrayList buscarTodos(Compra compra)
+        public static ArrayList BuscarTodos(NotaFiscal nf)
         {
-            ArrayList compras = new ArrayList();
+            ArrayList notasfiscais = new ArrayList();
 
             MySqlCommand cmd;
             string sql = "SELECT * FROM " + TABELA + ";";
@@ -76,29 +76,33 @@ namespace Dao
 
             while (leitor.Read())
             {
-                compras.Add(
-                    new CompraAux(int.Parse(leitor["id"].ToString()), DateTime.Parse(leitor["dataPagamento"].ToString()),
+                notasfiscais.Add(
+                    new NotaFiscalAux(int.Parse(leitor["id"].ToString()),
+                        ulong.Parse(leitor["nBoleto"].ToString()),
+                        DateTime.Parse(leitor["dataPagamento"].ToString()),
                         DateTime.Parse(leitor["dataCompra"].ToString()),
-                        double.Parse(leitor["total"].ToString()),
-                        int.Parse(leitor["fk_cliente"].ToString())));
+                        DateTime.Parse(leitor["dataVencimento"].ToString()),
+                        double.Parse(leitor["precoTotal"].ToString()),
+                        int.Parse(leitor["fk_fornecedor"].ToString())));
             }
             // Libera recursos de memória.
             leitor.Close();
 
 
-            return compras;
+            return notasfiscais;
 
         }
 
-        /* public static ArrayList buscarTodos(CompraAux cAux)
+        public static ArrayList BuscarTodos(NotaFiscalAux nfAux)
          {
-             ArrayList compras = new ArrayList();
+             ArrayList notasfiscais = new ArrayList();
 
              MySqlCommand cmd;
-             string sql = "select co.dataCompra as dataCompra, co.total as total, co.dataPagamento as" +
-             " dataPagamento, ip.quantidade as quantidade, p.descricao as descricao, c.nome as" +
-             " nome from produto p inner join itemproduto ip on ip.fk_produto = p.id inner join" +
-             " compra co on co.id = ip.fk_compra inner join cliente c on c.cpf = co.fk_cliente;";
+
+             string sql = "select nf.nBoleto as boleto, nf.dataVencimento as vencimento, nf.dataCompra as dataCompra, nf.precototal as total, nf.dataPagamento as" +
+             " dataPagamento, ii.quantidade as quantidade, i.descricao as descricao, f.nome as" +
+             " nome from insumo i inner join iteminsumo ii on ii.fk_insumo = i.id inner join" +
+             " notafiscal nf on nf.id = ii.fk_notafiscal inner join fornecedor f on f.cnpj = nf.fk_fornecedor;";
 
 
              // Associação do comando à conexão.
@@ -114,19 +118,26 @@ namespace Dao
 
              while (leitor.Read())
              {
-                 compras.Add(
-                     new CompraAux(DateTime.Parse(leitor["dataCompra"].ToString()),
-                        leitor["nome"].ToString(), leitor["descricao"].ToString(), int.Parse(leitor["quantidade"].ToString()),
-                        DateTime.Parse(leitor["dataPagamento"].ToString()), double.Parse(leitor["total"].ToString())));
+                 notasfiscais.Add(
+                     new NotaFiscalAux(ulong.Parse(leitor["boleto"].ToString()),
+                         leitor["nome"].ToString(),
+                         leitor["descricao"].ToString(),
+                         int.Parse(leitor["quantidade"].ToString()),
+                         DateTime.Parse(leitor["dataPagamento"].ToString()), 
+                         DateTime.Parse(leitor["vencimento"].ToString()),
+                        DateTime.Parse(leitor["dataCompra"].ToString()),
+                        double.Parse(leitor["total"].ToString())));
              }
+
              // Libera recursos de memória.
              leitor.Close();
 
 
-             return compras;
+             return notasfiscais;
 
          }
 
+        /*
          public static Compra BuscarPorId(Compra compra)
          {
              Compra resposta = null;

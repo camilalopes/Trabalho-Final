@@ -12,28 +12,21 @@ namespace SocialSis
     class Cliente
     {
         private ulong cpf;
-        //Atributo responsável por registrar o cpf do cliente
 
         private string nome;
-        //Atributo responsável por registrar no nome do cliente
 
         private string rg;
-        //Atributo responsável por registrar  rg do cliente
 
         private string email;
-        //Atributo responsável por registrar o email do cliente
 
         private ulong tel;
-        //Atributo responsável por registrar o telefone do cliente
 
         private string endereco;
-        //Atributo responsavel por registrar o endereço do cliente
 
         private DateTime prevPagamento;
-        //Atributo responsável por registrar a previsão de pagamento do cliente
 
         private DateTime dataNasc;
-        //Atributo responsável por registrar a data de nascimento do cliente
+
 
         /// <summary>
         /// Construtor padrão da classe

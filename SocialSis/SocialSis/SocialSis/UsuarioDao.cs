@@ -60,7 +60,7 @@ namespace Dao
             sql = "UPDATE " + TABELA
                 + " SET login = @login,senha = @senha, nome = @nome,"
                 + "telefone = @telefone, email = @email, adm = @adm"
-                + " WHERE login=@loginAntigo;";
+                + " WHERE login = @loginAntigo;";
 
             // Associação do comando à conexão.
             cmd = new MySqlCommand(sql,
@@ -69,16 +69,22 @@ namespace Dao
             // Inserção de valores nos parâmetros.
             cmd.Parameters.AddWithValue("@login",
                 usuario.Login);
+
             cmd.Parameters.AddWithValue("@senha",
                 usuario.GetSenha());
+
             cmd.Parameters.AddWithValue("@nome",
                 usuario.Nome);
+
             cmd.Parameters.AddWithValue("@telefone",
                 usuario.Telefone);
+
             cmd.Parameters.AddWithValue("@email",
                 usuario.Email);
+
             cmd.Parameters.AddWithValue("@adm",
                 usuario.Adm);
+
             cmd.Parameters.AddWithValue("@loginAntigo",
                 lAntigo);
 
@@ -97,7 +103,6 @@ namespace Dao
             ArrayList usuarios = new ArrayList();
 
             MySqlCommand cmd;
-
 
             string sql = "SELECT * FROM " + TABELA + ";";
 
@@ -120,13 +125,15 @@ namespace Dao
                 usuarios.Add(
                     new Usuario(
                         leitor["login"].ToString(), leitor["senha"].ToString(),
-                        leitor["nome"].ToString(), ulong.Parse(leitor["telefone"].ToString()), leitor["email"].ToString(), bool.Parse(leitor["adm"].ToString())
+                        leitor["nome"].ToString(), ulong.Parse(leitor["telefone"].ToString()),
+                        leitor["email"].ToString(), bool.Parse(leitor["adm"].ToString())
                     )
                 );
             }
 
             // Libera recursos de memória.
             leitor.Close();
+
             return usuarios;
         }
 
@@ -160,7 +167,8 @@ namespace Dao
                 {
                     // adiciona o respectivo objeto Destinatario, construído
                     // com os dados de retorno, à coleção de destinatarios.
-                    resposta = (new Usuario(leitor["login"].ToString(), leitor["senha"].ToString(), bool.Parse(leitor["adm"].ToString())));
+                    resposta = (new Usuario(leitor["login"].ToString(), leitor["senha"].ToString(),
+                        bool.Parse(leitor["adm"].ToString())));
 
                 }
 
@@ -209,6 +217,34 @@ namespace Dao
 
             return resposta;
 
+        }
+
+        public static void Excluir(Usuario usuario)
+        {
+            // Só é possível excluir uma tarefa cujo id
+            // esteja especificado.
+            if (usuario.Login != null)
+            {
+                MySqlCommand cmd;
+
+                // MUITA ATENÇÃO nos espaçamentos entre comandos.
+                string sql = "DELETE FROM " + TABELA
+                    + " WHERE login = @login;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@login",
+                    usuario.Login);
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL sem dados de retorno.
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

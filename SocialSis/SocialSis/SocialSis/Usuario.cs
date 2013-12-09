@@ -15,7 +15,8 @@ namespace SocialSis
         public Usuario()
         { }
 
-        public Usuario(string login, string senha, string nome, ulong telefone, string email, bool adm)
+        public Usuario(string login, string senha, string nome, ulong telefone, 
+            string email, bool adm)
         {
             Login = login;
             SetSenha(senha);

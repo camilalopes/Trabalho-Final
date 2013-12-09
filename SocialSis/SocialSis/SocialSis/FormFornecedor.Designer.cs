@@ -56,11 +56,12 @@
             this.dgvFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFornecedor.Location = new System.Drawing.Point(309, 51);
+            this.dgvFornecedor.Location = new System.Drawing.Point(298, 46);
             this.dgvFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvFornecedor.Name = "dgvFornecedor";
-            this.dgvFornecedor.Size = new System.Drawing.Size(458, 322);
+            this.dgvFornecedor.Size = new System.Drawing.Size(469, 341);
             this.dgvFornecedor.TabIndex = 11;
+            this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
             // 
             // label5
             // 
@@ -126,35 +127,35 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(15, 65);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(222, 20);
+            this.txtNome.Size = new System.Drawing.Size(212, 20);
             this.txtNome.TabIndex = 19;
             // 
             // txtCnpj
             // 
             this.txtCnpj.Location = new System.Drawing.Point(17, 118);
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(220, 20);
+            this.txtCnpj.Size = new System.Drawing.Size(210, 20);
             this.txtCnpj.TabIndex = 20;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(17, 169);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(220, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(210, 20);
             this.txtTelefone.TabIndex = 21;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(17, 225);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(220, 20);
+            this.txtEmail.Size = new System.Drawing.Size(210, 20);
             this.txtEmail.TabIndex = 22;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(17, 276);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(220, 20);
+            this.txtEndereco.Size = new System.Drawing.Size(210, 20);
             this.txtEndereco.TabIndex = 23;
             // 
             // shapeContainer1
@@ -171,10 +172,10 @@
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 267;
-            this.lineShape1.X2 = 269;
-            this.lineShape1.Y1 = 32;
-            this.lineShape1.Y2 = 407;
+            this.lineShape1.X1 = 258;
+            this.lineShape1.X2 = 258;
+            this.lineShape1.Y1 = 15;
+            this.lineShape1.Y2 = 409;
             // 
             // label7
             // 
@@ -191,24 +192,26 @@
             this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExcluir.Location = new System.Drawing.Point(139, 361);
+            this.btExcluir.Location = new System.Drawing.Point(129, 361);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(98, 24);
             this.btExcluir.TabIndex = 36;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btCancelar
             // 
             this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(139, 331);
+            this.btCancelar.Location = new System.Drawing.Point(129, 331);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(98, 24);
             this.btCancelar.TabIndex = 35;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btAlterar
             // 
@@ -221,6 +224,7 @@
             this.btAlterar.TabIndex = 34;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btSalvar
             // 

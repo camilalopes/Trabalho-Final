@@ -117,45 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 36</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 500</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAAK2CAIAAADRyvK/AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -1347,6 +1309,7 @@
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 3</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
@@ -1356,6 +1319,7 @@
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -1371,20 +1335,44 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="clienteToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 36</value>
   </data>
-  <data name="clienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
-  <data name="clienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>CLIENTE</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 500</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="visualizarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
+    <value>205, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem.Text" xml:space="preserve">
     <value>Visualizar Clientes</value>
+  </data>
+  <data name="clienteToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="clienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 22</value>
+  </data>
+  <data name="clienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>CLIENTE</value>
   </data>
   <metadata name="mainMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1392,29 +1380,53 @@
   <data name="mainMenuStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
+  <data name="visualizarToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
+  </data>
+  <data name="visualizarToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Visualizar Produtos</value>
+  </data>
   <data name="pRODUTOToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+    <value>Arial, 12pt</value>
   </data>
   <data name="pRODUTOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 22</value>
+    <value>109, 22</value>
   </data>
   <data name="pRODUTOToolStripMenuItem.Text" xml:space="preserve">
     <value>PRODUTOS</value>
   </data>
+  <data name="visualizarToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="visualizarToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Realizar</value>
+  </data>
   <data name="cOMPRAToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+    <value>Arial, 12pt</value>
   </data>
   <data name="cOMPRAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 22</value>
+    <value>90, 22</value>
   </data>
   <data name="cOMPRAToolStripMenuItem.Text" xml:space="preserve">
     <value>COMPRA</value>
+  </data>
+  <data name="visualizarToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="visualizarToolStripMenuItem4.Text" xml:space="preserve">
+    <value>Visualizar</value>
   </data>
   <data name="fORNECEDORToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 22</value>
   </data>
   <data name="fORNECEDORToolStripMenuItem.Text" xml:space="preserve">
     <value>FORNECEDOR</value>
+  </data>
+  <data name="visualizarToolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="visualizarToolStripMenuItem5.Text" xml:space="preserve">
+    <value>Visualizar</value>
   </data>
   <data name="nOTASFISCAISToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 22</value>
@@ -1423,7 +1435,7 @@
     <value>NOTAS FISCAIS</value>
   </data>
   <data name="visualizarToolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem6.Text" xml:space="preserve">
     <value>Visualizar</value>
@@ -1433,6 +1445,12 @@
   </data>
   <data name="iNSUMOToolStripMenuItem.Text" xml:space="preserve">
     <value>INSUMO</value>
+  </data>
+  <data name="visualizarToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="visualizarToolStripMenuItem3.Text" xml:space="preserve">
+    <value>Visualizar</value>
   </data>
   <data name="USUARIOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 22</value>
@@ -1466,30 +1484,6 @@
   </data>
   <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="visualizarToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
-  </data>
-  <data name="visualizarToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Visualizar Produtos</value>
-  </data>
-  <data name="visualizarToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="visualizarToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Realizar</value>
-  </data>
-  <data name="visualizarToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="visualizarToolStripMenuItem4.Text" xml:space="preserve">
-    <value>Visualizar</value>
-  </data>
-  <data name="visualizarToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
-  </data>
-  <data name="visualizarToolStripMenuItem3.Text" xml:space="preserve">
-    <value>Visualizar</value>
   </data>
   <data name="BtSairSistema.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1544,7 +1538,7 @@
 </value>
   </data>
   <data name="BtSairSistema.Location" type="System.Drawing.Point, System.Drawing">
-    <value>834, 0</value>
+    <value>832, 0</value>
   </data>
   <data name="BtSairSistema.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 24</value>
@@ -1596,12 +1590,6 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="visualizarToolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="visualizarToolStripMenuItem5.Text" xml:space="preserve">
-    <value>Visualizar</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1748,18 +1736,6 @@
   <data name="&gt;&gt;visualizarToolStripMenuItem4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;USUARIOToolStripMenuItem.Name" xml:space="preserve">
-    <value>USUARIOToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;USUARIOToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;visualizarToolStripMenuItem3.Name" xml:space="preserve">
-    <value>visualizarToolStripMenuItem3</value>
-  </data>
-  <data name="&gt;&gt;visualizarToolStripMenuItem3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;nOTASFISCAISToolStripMenuItem.Name" xml:space="preserve">
     <value>nOTASFISCAISToolStripMenuItem</value>
   </data>
@@ -1782,6 +1758,18 @@
     <value>visualizarToolStripMenuItem6</value>
   </data>
   <data name="&gt;&gt;visualizarToolStripMenuItem6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USUARIOToolStripMenuItem.Name" xml:space="preserve">
+    <value>USUARIOToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;USUARIOToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;visualizarToolStripMenuItem3.Name" xml:space="preserve">
+    <value>visualizarToolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;visualizarToolStripMenuItem3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

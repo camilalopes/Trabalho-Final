@@ -92,6 +92,7 @@
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.Size = new System.Drawing.Size(421, 362);
             this.dgvUsuario.TabIndex = 15;
+            this.dgvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellClick);
             // 
             // label1
             // 
@@ -231,6 +232,7 @@
             this.btAlterar.TabIndex = 30;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btCancelar
             // 
@@ -243,6 +245,7 @@
             this.btCancelar.TabIndex = 31;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btExcluir
             // 
@@ -255,6 +258,7 @@
             this.btExcluir.TabIndex = 32;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // FormUsuario
             // 

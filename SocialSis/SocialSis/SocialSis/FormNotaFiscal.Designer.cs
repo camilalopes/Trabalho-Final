@@ -1,4 +1,4 @@
-﻿namespace SocialSis
+﻿namespace GUI
 {
     partial class FormNotaFiscal
     {
@@ -31,7 +31,7 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvCompra = new System.Windows.Forms.DataGridView();
+            this.dgvNota = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.chkPago = new System.Windows.Forms.CheckBox();
             this.listaFornecedor = new System.Windows.Forms.ListBox();
@@ -48,7 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNBoleto = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNota)).BeginInit();
             this.SuspendLayout();
             // 
             // lineShape1
@@ -66,7 +66,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(831, 619);
+            this.shapeContainer1.Size = new System.Drawing.Size(831, 604);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -80,23 +80,23 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Notas Registradas: ";
             // 
-            // dgvCompra
+            // dgvNota
             // 
-            this.dgvCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCompra.Location = new System.Drawing.Point(305, 70);
-            this.dgvCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.Size = new System.Drawing.Size(497, 485);
-            this.dgvCompra.TabIndex = 13;
+            this.dgvNota.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvNota.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvNota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNota.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvNota.Location = new System.Drawing.Point(305, 70);
+            this.dgvNota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvNota.Name = "dgvNota";
+            this.dgvNota.Size = new System.Drawing.Size(497, 485);
+            this.dgvNota.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 524);
+            this.label6.Location = new System.Drawing.Point(9, 509);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 16);
             this.label6.TabIndex = 29;
@@ -106,7 +106,7 @@
             // 
             this.chkPago.AutoSize = true;
             this.chkPago.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPago.Location = new System.Drawing.Point(42, 544);
+            this.chkPago.Location = new System.Drawing.Point(40, 529);
             this.chkPago.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkPago.Name = "chkPago";
             this.chkPago.Size = new System.Drawing.Size(48, 19);
@@ -126,6 +126,7 @@
             this.listaFornecedor.Size = new System.Drawing.Size(182, 96);
             this.listaFornecedor.TabIndex = 27;
             this.listaFornecedor.Visible = false;
+            this.listaFornecedor.Click += new System.EventHandler(this.listaFornecedor_Click);
             // 
             // txtFornecedor
             // 
@@ -135,6 +136,7 @@
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(184, 22);
             this.txtFornecedor.TabIndex = 26;
+            this.txtFornecedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFornecedor_KeyUp);
             // 
             // listaInsumo
             // 
@@ -142,30 +144,32 @@
             this.listaInsumo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaInsumo.FormattingEnabled = true;
             this.listaInsumo.ItemHeight = 16;
-            this.listaInsumo.Location = new System.Drawing.Point(10, 299);
+            this.listaInsumo.Location = new System.Drawing.Point(12, 284);
             this.listaInsumo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listaInsumo.Name = "listaInsumo";
             this.listaInsumo.Size = new System.Drawing.Size(184, 112);
             this.listaInsumo.TabIndex = 25;
             this.listaInsumo.Visible = false;
+            this.listaInsumo.Click += new System.EventHandler(this.listaInsumo_Click);
             // 
             // btSalvar
             // 
             this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(3, 582);
+            this.btSalvar.Location = new System.Drawing.Point(8, 570);
             this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(188, 24);
             this.btSalvar.TabIndex = 24;
             this.btSalvar.Text = "Salvar Nota";
             this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantidade.Location = new System.Drawing.Point(27, 435);
+            this.txtQuantidade.Location = new System.Drawing.Point(25, 420);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(63, 22);
@@ -175,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 415);
+            this.label4.Location = new System.Drawing.Point(7, 400);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 22;
@@ -184,17 +188,18 @@
             // txtInsumo
             // 
             this.txtInsumo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInsumo.Location = new System.Drawing.Point(10, 281);
+            this.txtInsumo.Location = new System.Drawing.Point(12, 266);
             this.txtInsumo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsumo.Name = "txtInsumo";
             this.txtInsumo.Size = new System.Drawing.Size(184, 22);
             this.txtInsumo.TabIndex = 21;
+            this.txtInsumo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInsumo_KeyUp);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 261);
+            this.label3.Location = new System.Drawing.Point(9, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 16);
             this.label3.TabIndex = 20;
@@ -222,7 +227,7 @@
             // 
             // txtDataPrevPag
             // 
-            this.txtDataPrevPag.Location = new System.Drawing.Point(20, 490);
+            this.txtDataPrevPag.Location = new System.Drawing.Point(18, 475);
             this.txtDataPrevPag.Mask = "00/00/0000";
             this.txtDataPrevPag.Name = "txtDataPrevPag";
             this.txtDataPrevPag.Size = new System.Drawing.Size(68, 20);
@@ -233,7 +238,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 472);
+            this.label7.Location = new System.Drawing.Point(9, 456);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 16);
             this.label7.TabIndex = 31;
@@ -260,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 619);
+            this.ClientSize = new System.Drawing.Size(831, 604);
             this.Controls.Add(this.txtNBoleto);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -278,12 +283,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dgvCompra);
+            this.Controls.Add(this.dgvNota);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "FormNotaFiscal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNotaFiscal";
             this.Load += new System.EventHandler(this.FormNotaFiscal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +300,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvCompra;
+        private System.Windows.Forms.DataGridView dgvNota;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkPago;
         private System.Windows.Forms.ListBox listaFornecedor;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Dao;
 using SocialSis;
 
+
 namespace GUI
 {
     /// <summary>
@@ -18,8 +19,8 @@ namespace GUI
     public partial class FormLogin : Form
     {
         private FormPrincipal fp;
-        private static FormLogin janelaLogin;
         //Atributo para auxiliar no jogo de telas
+        private static FormLogin janelaLogin;
 
         /// <summary>
         /// Construtor padrão da classe
@@ -28,7 +29,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-    
+
         /// <summary>
         /// Evento responsável por realizar o login do usuario no sistema
         /// Falta aplicar a validação do usuario com o clique
@@ -55,8 +56,7 @@ namespace GUI
                 //passa a propiedade de adm do usuario para a FormPrincipal
                 fp = new FormPrincipal();
                 fp.AdmAux = resposta.Adm;
-                fc = new FormCompra();
-                fc.LoginAux = txtLogin.Text;
+                fp.LoginAux = resposta.Login;
                 fp.Show();
 
 
@@ -65,8 +65,13 @@ namespace GUI
                 //caso contrario a mensagem abaixo é ixibida
                 MessageBox.Show("Este usuario e/ou senha, não existem !!");
 
-           
-            
+
+
+        }
+        public string DescobreUsuario()
+        {
+
+            return txtLogin.Text;
         }
 
         /// <summary>
@@ -84,7 +89,7 @@ namespace GUI
         ///<summary>
         /// Metodo responsavel por encerrar tudo do sistema
         /// </summary>
-        public static  void FecharTudo()
+        public static void FecharTudo()
         {
             Application.Exit();
         }
@@ -126,9 +131,10 @@ namespace GUI
                 if (resposta != null)
                 {
 
+                    //passa a propiedade de adm do usuario para a FormPrincipal
                     fp = new FormPrincipal();
                     fp.AdmAux = resposta.Adm;
-                    // fp.LoginAux = resposta.Login;
+                    fp.LoginAux = resposta.Login;
                     fp.Show();
 
                 }
@@ -136,7 +142,16 @@ namespace GUI
                     MessageBox.Show("Este usuario e/ou senha, não existem !!");
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+        public string nomeUser()
+        {
+            return txtLogin.Text;
         }
     }
+}
 
 

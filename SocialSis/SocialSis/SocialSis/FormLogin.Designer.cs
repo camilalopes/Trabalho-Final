@@ -46,7 +46,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(102, 22);
             this.txtLogin.TabIndex = 1;
-            this.txtLogin.Text = "camila";
             // 
             // txtSenha
             // 
@@ -57,7 +56,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 22);
             this.txtSenha.TabIndex = 2;
-            this.txtSenha.Text = "1234";
             this.txtSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
             // 
             // btLogin
@@ -123,6 +121,7 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acessar Sistema";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

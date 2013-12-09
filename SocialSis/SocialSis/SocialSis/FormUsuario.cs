@@ -13,6 +13,8 @@ namespace GUI
 {
     public partial class FormUsuario : Form
     {
+        Usuario usuarioClicado;
+
         public FormUsuario()
         {
             InitializeComponent();
@@ -84,6 +86,73 @@ namespace GUI
                 dgvUsuario.Columns[4].Width = 95;
 
             }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            Restaurar();
+
+            //Busca todos os usuarios existentes no BD
+            dgvUsuario.DataSource = UsuarioDao.BuscarTodos(new Usuario());
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            //Chama o metodo "Alterar" da classe UsuarioDao,
+            //cria um objeto com os dados passados pela interface gráfica
+            UsuarioDao.Alterar(new Usuario(txtLogin.Text, txtSenha.Text, txtNome.Text,
+                ulong.Parse(txtTelefone.Text), txtEmail.Text,
+                //usando operador ternário, para decidir sobre o tipo do usuario
+                cboTipo.SelectedIndex == 0 ? false : true), usuarioClicado.Login);
+
+            dgvUsuario.DataSource = UsuarioDao.BuscarTodos(new Usuario());
+
+            Restaurar();
+        }
+
+        private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Habilita e desabilita os respectivos botões
+            btCancelar.Enabled = true;
+            btExcluir.Enabled = true;
+            btAlterar.Enabled = true;
+            btSalvar.Enabled = false;
+
+            // Verifica a validade da célula clicada.
+            if (e.RowIndex != -1)
+            {
+                // Recupera a fonte de dados como (as) ArrayList.
+                ArrayList usuarios
+                     = dgvUsuario.DataSource as ArrayList;
+
+                // Recupera o usuario clicado no DataGridView.
+                Usuario usuarioClicado = (Usuario)usuarios[e.RowIndex];
+
+                //Adiciona as propiedades do usuario clicado
+                //em cada TextBox
+                txtNome.Text = usuarioClicado.Nome;
+                txtEmail.Text = usuarioClicado.Email;
+                txtTelefone.Text = usuarioClicado.Telefone.ToString();
+                txtLogin.Text = usuarioClicado.Login;
+                txtSenha.Text = usuarioClicado.GetSenha();
+
+                //verifica qual o tipo do usuario e seleciona no ComboBox
+                if (usuarioClicado.Adm == true)
+                {
+                    cboTipo.SelectedIndex = 1;
+                }
+                else
+                    cboTipo.SelectedIndex = 0;
+            }
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            UsuarioDao.Excluir(new Usuario(usuarioClicado.Login));
+
+            dgvUsuario.DataSource = UsuarioDao.BuscarTodos(new Usuario());
+
+            Restaurar();
         }
     }
 }

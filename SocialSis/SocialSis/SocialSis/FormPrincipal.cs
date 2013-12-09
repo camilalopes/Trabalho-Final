@@ -35,7 +35,13 @@ namespace GUI
             set { admAux = value; }
         }
 
+        private string loginAux;
 
+        public string LoginAux
+        {
+            get { return loginAux; }
+            set { loginAux = value; }
+        }
       
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace GUI
         private void visualizarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             FormCompra foc = new FormCompra();
+            foc.LoginAux = loginAux;
             foc.Show();
         }
 
@@ -145,6 +152,13 @@ namespace GUI
         {
             FormInsumo fi = new FormInsumo();
             fi.Show();
+        }
+
+        private void visualizarToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            FormNotaFiscal  fnf= new FormNotaFiscal();
+            fnf.Show();
+
         }
     }
 }

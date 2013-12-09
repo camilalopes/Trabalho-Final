@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -17,6 +17,7 @@ namespace GUI
     /// </summary>
     public partial class FormProduto : Form
     {
+        Produto produtoClicado;
         /// <summary>
         /// Construtor padrão da classe
         /// </summary>
@@ -32,6 +33,10 @@ namespace GUI
         {
             txtDescricao.Text = "";
             txtPreco.Text = "";
+            btCancelar.Enabled = false;
+            btExcluir.Enabled = false;
+            btSalvar.Enabled = true;
+
         }
 
         /// <summary>
@@ -58,5 +63,61 @@ namespace GUI
         {
             dgvProduto.DataSource = ProdutoDao.buscarTodos(new Produto());
         }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            Restaurar();
+            dgvProduto.DataSource = ProdutoDao.buscarTodos(new Produto());
+
+        }
+
+        private void dgvProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Habilida e desabilita os seguintes botões
+            btAlterar.Enabled = true;
+            btExcluir.Enabled = true;
+            btSalvar.Enabled = false;
+            btCancelar.Enabled = true;
+
+            //Confere se a celula clicada é valida
+            if (e.RowIndex != -1)
+            {
+                // Recupera a fonte de dados como (as) ArrayList.
+                ArrayList produtos
+                     = dgvProduto.DataSource as ArrayList;
+
+                // Recupera o produto clicado no DataGridView.
+                produtoClicado = (Produto)produtos[e.RowIndex];
+
+                // Adiciona as propriedades do produto clicado no
+                // respectivo campo
+                txtDescricao.Text = produtoClicado.Descricao;
+                txtPreco.Text = produtoClicado.PrecoUnitario.ToString();
+
+            }
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            ProdutoDao.salvar(new Produto(produtoClicado.GetId(), txtDescricao.Text,
+                double.Parse(txtPreco.Text)));
+
+            dgvProduto.DataSource = ProdutoDao.buscarTodos(new Produto());
+
+            Restaurar();
+
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            ProdutoDao.Excluir(new Produto(produtoClicado.GetId()));
+
+            dgvProduto.DataSource = ProdutoDao.buscarTodos(new Produto());
+
+            Restaurar();
+
+        }
+
+
     }
 }

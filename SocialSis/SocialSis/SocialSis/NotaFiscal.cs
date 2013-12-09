@@ -14,13 +14,15 @@ namespace SocialSis
         private DateTime dataVencimento;
         private double precoTotal;
         private Fornecedor fornecedor;
+        private int id;
 
         public NotaFiscal()
         { }
 
-        public NotaFiscal(ulong nBoleto, DateTime dataPamento, DateTime dataCompra, DateTime dataVencimento,
+        public NotaFiscal(int id, ulong nBoleto, DateTime dataPagamento, DateTime dataCompra, DateTime dataVencimento,
             double precoTotal, Fornecedor fornecedor)
         {
+            SetId(id);
             NBoleto = nBoleto;
             DataPagamento = dataPagamento;
             DataCompra = dataCompra;
@@ -63,6 +65,16 @@ namespace SocialSis
         {
             get { return dataVencimento; }
             set { dataVencimento = value; }
+        }
+
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
+        public int GetId()
+        {
+            return this.id;
         }
 
     }

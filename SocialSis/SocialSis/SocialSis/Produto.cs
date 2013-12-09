@@ -44,6 +44,11 @@ namespace SocialSis
             Descricao = descricao;
         }
 
+        public Produto(int id)
+        {
+            SetId(id);
+        }
+
         /// <summary>
         /// Propriedade responsável por guardar e retornar valores do atributo descrição do produto
         /// </summary>

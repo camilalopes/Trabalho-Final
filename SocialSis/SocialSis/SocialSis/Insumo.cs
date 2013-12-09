@@ -23,6 +23,16 @@ namespace SocialSis
         public Insumo()
         { }
 
+        public Insumo(int id)
+        {
+            SetId(id);
+        }
+
+        public Insumo(string descricao)
+        {
+            Descricao = descricao;
+        }
+
         public void SetId(int id)
         {
             this.id = id;
@@ -43,6 +53,11 @@ namespace SocialSis
         {
             get { return descricao; }
             set { descricao = value; }
+        }
+
+        public override string ToString()
+        {
+            return descricao;
         }
     }
 }

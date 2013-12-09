@@ -40,14 +40,14 @@
             this.visualizarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.fORNECEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.USUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtSairSistema = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.nOTASFISCAISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSUMOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.USUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtSairSistema = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainMenuStrip.SuspendLayout();
@@ -133,6 +133,32 @@
             resources.ApplyResources(this.visualizarToolStripMenuItem4, "visualizarToolStripMenuItem4");
             this.visualizarToolStripMenuItem4.Click += new System.EventHandler(this.visualizarToolStripMenuItem4_Click);
             // 
+            // nOTASFISCAISToolStripMenuItem
+            // 
+            this.nOTASFISCAISToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem5});
+            this.nOTASFISCAISToolStripMenuItem.Name = "nOTASFISCAISToolStripMenuItem";
+            resources.ApplyResources(this.nOTASFISCAISToolStripMenuItem, "nOTASFISCAISToolStripMenuItem");
+            // 
+            // visualizarToolStripMenuItem5
+            // 
+            this.visualizarToolStripMenuItem5.Name = "visualizarToolStripMenuItem5";
+            resources.ApplyResources(this.visualizarToolStripMenuItem5, "visualizarToolStripMenuItem5");
+            this.visualizarToolStripMenuItem5.Click += new System.EventHandler(this.visualizarToolStripMenuItem5_Click);
+            // 
+            // iNSUMOToolStripMenuItem
+            // 
+            this.iNSUMOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem6});
+            this.iNSUMOToolStripMenuItem.Name = "iNSUMOToolStripMenuItem";
+            resources.ApplyResources(this.iNSUMOToolStripMenuItem, "iNSUMOToolStripMenuItem");
+            // 
+            // visualizarToolStripMenuItem6
+            // 
+            this.visualizarToolStripMenuItem6.Name = "visualizarToolStripMenuItem6";
+            resources.ApplyResources(this.visualizarToolStripMenuItem6, "visualizarToolStripMenuItem6");
+            this.visualizarToolStripMenuItem6.Click += new System.EventHandler(this.visualizarToolStripMenuItem6_Click);
+            // 
             // USUARIOToolStripMenuItem
             // 
             this.USUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -157,32 +183,8 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Name = "label1";
-            // 
-            // nOTASFISCAISToolStripMenuItem
-            // 
-            this.nOTASFISCAISToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizarToolStripMenuItem5});
-            this.nOTASFISCAISToolStripMenuItem.Name = "nOTASFISCAISToolStripMenuItem";
-            resources.ApplyResources(this.nOTASFISCAISToolStripMenuItem, "nOTASFISCAISToolStripMenuItem");
-            // 
-            // visualizarToolStripMenuItem5
-            // 
-            this.visualizarToolStripMenuItem5.Name = "visualizarToolStripMenuItem5";
-            resources.ApplyResources(this.visualizarToolStripMenuItem5, "visualizarToolStripMenuItem5");
-            // 
-            // iNSUMOToolStripMenuItem
-            // 
-            this.iNSUMOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizarToolStripMenuItem6});
-            this.iNSUMOToolStripMenuItem.Name = "iNSUMOToolStripMenuItem";
-            resources.ApplyResources(this.iNSUMOToolStripMenuItem, "iNSUMOToolStripMenuItem");
-            // 
-            // visualizarToolStripMenuItem6
-            // 
-            this.visualizarToolStripMenuItem6.Name = "visualizarToolStripMenuItem6";
-            resources.ApplyResources(this.visualizarToolStripMenuItem6, "visualizarToolStripMenuItem6");
-            this.visualizarToolStripMenuItem6.Click += new System.EventHandler(this.visualizarToolStripMenuItem6_Click);
             // 
             // FormPrincipal
             // 

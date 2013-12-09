@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -18,6 +18,7 @@ namespace GUI
     /// </summary>
     public partial class FormClienteProfessor : Form
     {
+        Cliente clienteClicado;
         /// <summary>
         /// Construtor padrão da classe
         /// </summary>
@@ -38,6 +39,11 @@ namespace GUI
             txtPrevPag.Text = "";
             txtEmail.Text = "";
             txtEndereco.Text = "";
+            txtTel.Text = "";
+
+            btCancelar.Enabled = false;
+            btExcluir.Enabled = false;
+            btSalvar.Enabled = true;
 
         }
 
@@ -88,6 +94,71 @@ namespace GUI
 
             Restaurar();
            
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            Restaurar();
+
+            dgvCliente.DataSource = ClienteDao.buscarTodos(new Cliente());
+
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            ClienteDao.Alterar(new Cliente(txtNome.Text, ulong.Parse(txtCpf.Text), txtRg.Text,
+                txtEmail.Text, ulong.Parse(txtTel.Text), txtEndereco.Text, DateTime.Parse(txtPrevPag.Text),
+                DateTime.Parse(txtDataNasc.Text)), clienteClicado.Cpf);
+
+            dgvCliente.DataSource = ClienteDao.buscarTodos(new Cliente());
+
+            Restaurar();
+
+
+        }
+
+        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Habilida e desabilita os seguintes botões
+            btAlterar.Enabled = true;
+            btExcluir.Enabled = true;
+            btSalvar.Enabled = false;
+            btCancelar.Enabled = true;
+
+            //Confere se a celula clicada é valida
+            if (e.RowIndex != -1)
+            {
+                // Recupera a fonte de dados como (as) ArrayList.
+                ArrayList clientes
+                     = dgvCliente.DataSource as ArrayList;
+
+                // Recupera o cliente clicado no DataGridView.
+                clienteClicado = (Cliente)clientes[e.RowIndex];
+
+                // Adiciona as propriedades do item clicado no
+                // respectivo campo
+                txtCpf.Text = clienteClicado.Cpf.ToString();
+                txtDataNasc.Text = clienteClicado.DataNasc.ToString();
+                txtEmail.Text = clienteClicado.Email;
+                txtEndereco.Text = clienteClicado.Endereco;
+                txtNome.Text = clienteClicado.Nome;
+                txtPrevPag.Text = clienteClicado.PrevPagamento.ToString();
+                txtRg.Text = clienteClicado.Rg.ToString();
+                txtTel.Text = clienteClicado.Tel.ToString();
+
+
+            }
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            ClienteDao.Excluir(new Cliente(clienteClicado.Cpf));
+
+            dgvCliente.DataSource = ClienteDao.buscarTodos(new Cliente());
+
+            Restaurar();
+
+
         }
 
     }

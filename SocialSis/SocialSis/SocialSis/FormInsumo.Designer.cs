@@ -81,6 +81,7 @@
             this.dgvInsumo.Name = "dgvInsumo";
             this.dgvInsumo.Size = new System.Drawing.Size(376, 199);
             this.dgvInsumo.TabIndex = 10;
+            this.dgvInsumo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInsumo_CellClick);
             // 
             // label4
             // 
@@ -122,6 +123,7 @@
             this.btExcluir.TabIndex = 40;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btCancelar
             // 
@@ -134,6 +136,7 @@
             this.btCancelar.TabIndex = 39;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btAlterar
             // 
@@ -146,6 +149,7 @@
             this.btAlterar.TabIndex = 38;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btSalvar
             // 

@@ -39,6 +39,9 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label4 = new System.Windows.Forms.Label();
+            this.btExcluir = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,19 +50,20 @@
             this.dgvProduto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduto.Location = new System.Drawing.Point(224, 51);
+            this.dgvProduto.Location = new System.Drawing.Point(250, 51);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.Size = new System.Drawing.Size(386, 199);
             this.dgvProduto.TabIndex = 0;
+            this.dgvProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellClick);
             // 
             // btSalvar
             // 
             this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(12, 226);
+            this.btSalvar.Location = new System.Drawing.Point(12, 187);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(169, 24);
+            this.btSalvar.Size = new System.Drawing.Size(96, 24);
             this.btSalvar.TabIndex = 1;
             this.btSalvar.Text = "Cadastrar";
             this.btSalvar.UseVisualStyleBackColor = false;
@@ -118,34 +122,76 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(622, 262);
+            this.shapeContainer1.Size = new System.Drawing.Size(648, 270);
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 206;
-            this.lineShape1.X2 = 207;
-            this.lineShape1.Y1 = 4;
-            this.lineShape1.Y2 = 255;
+            this.lineShape1.X1 = 221;
+            this.lineShape1.X2 = 222;
+            this.lineShape1.Y1 = 5;
+            this.lineShape1.Y2 = 256;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(221, 9);
+            this.label4.Location = new System.Drawing.Point(235, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Produtos Cadastrados:";
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExcluir.Location = new System.Drawing.Point(114, 226);
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(96, 24);
+            this.btExcluir.TabIndex = 34;
+            this.btExcluir.Text = "Excluir";
+            this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(114, 187);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(96, 24);
+            this.btCancelar.TabIndex = 33;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // btAlterar
+            // 
+            this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterar.Location = new System.Drawing.Point(12, 226);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(96, 24);
+            this.btAlterar.TabIndex = 35;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(622, 262);
+            this.ClientSize = new System.Drawing.Size(648, 270);
+            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btExcluir);
+            this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -180,5 +226,8 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btExcluir;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btAlterar;
     }
 }

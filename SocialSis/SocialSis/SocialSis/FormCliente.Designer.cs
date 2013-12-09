@@ -52,6 +52,9 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.txtPrevPag = new System.Windows.Forms.MaskedTextBox();
+            this.btExcluir = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,7 +206,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 10);
+            this.label2.Location = new System.Drawing.Point(238, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(212, 18);
             this.label2.TabIndex = 87;
@@ -215,11 +218,12 @@
             this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(227, 52);
+            this.dgvCliente.Location = new System.Drawing.Point(261, 43);
             this.dgvCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(482, 438);
             this.dgvCliente.TabIndex = 86;
+            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             // 
             // lbSairSistema
             // 
@@ -240,10 +244,10 @@
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalvar.ForeColor = System.Drawing.Color.Black;
-            this.btSalvar.Location = new System.Drawing.Point(12, 466);
+            this.btSalvar.Location = new System.Drawing.Point(12, 457);
             this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(188, 24);
+            this.btSalvar.Size = new System.Drawing.Size(96, 24);
             this.btSalvar.TabIndex = 94;
             this.btSalvar.Text = "Cadastrar Cliente";
             this.btSalvar.UseVisualStyleBackColor = false;
@@ -256,17 +260,17 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(721, 503);
+            this.shapeContainer1.Size = new System.Drawing.Size(755, 527);
             this.shapeContainer1.TabIndex = 95;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 215;
-            this.lineShape1.X2 = 212;
-            this.lineShape1.Y1 = 15;
-            this.lineShape1.Y2 = 491;
+            this.lineShape1.X1 = 227;
+            this.lineShape1.X2 = 227;
+            this.lineShape1.Y1 = 10;
+            this.lineShape1.Y2 = 510;
             // 
             // txtDataNasc
             // 
@@ -290,12 +294,54 @@
             this.txtPrevPag.TabIndex = 98;
             this.txtPrevPag.ValidatingType = typeof(System.DateTime);
             // 
+            // btExcluir
+            // 
+            this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExcluir.Location = new System.Drawing.Point(114, 491);
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(96, 24);
+            this.btExcluir.TabIndex = 100;
+            this.btExcluir.Text = "Excluir";
+            this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(114, 457);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(96, 24);
+            this.btCancelar.TabIndex = 99;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // btAlterar
+            // 
+            this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterar.Location = new System.Drawing.Point(10, 491);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(96, 24);
+            this.btAlterar.TabIndex = 101;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            // 
             // FormClienteProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(721, 503);
+            this.ClientSize = new System.Drawing.Size(755, 527);
+            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btExcluir);
+            this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.txtPrevPag);
             this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.btSalvar);
@@ -358,5 +404,8 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.MaskedTextBox txtDataNasc;
         private System.Windows.Forms.MaskedTextBox txtPrevPag;
+        private System.Windows.Forms.Button btExcluir;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btAlterar;
     }
 }

@@ -22,84 +22,44 @@ namespace Dao
             MySqlCommand cmd;
             string sql;
 
-            if (cliente.Cpf != 0)
-            {
-                sql = "INSERT INTO " + TABELA
-                    + " VALUES (@cpf, @rg, @nome, @email, @tel, @dataNasc, @endereco, @prevPagamento);";
 
-                // Associação do comando à conexão.
-                cmd = new MySqlCommand(sql,
-                    BancoDados.RecuperarConexao());
+            sql = "INSERT INTO " + TABELA
+                + " VALUES (@cpf, @rg, @nome, @email, @tel, @dataNasc, @endereco, @prevPagamento);";
 
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@cpf",
-                    cliente.Cpf);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@rg",
-                    cliente.Rg);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@nome",
-                    cliente.Nome);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@email",
-                    cliente.Email);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@tel",
-                    cliente.Tel);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@dataNasc",
-                    cliente.DataNasc);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@endereco",
-                    cliente.Endereco);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@prevPagamento",
-                    cliente.PrevPagamento);
+            // Associação do comando à conexão.
+            cmd = new MySqlCommand(sql,
+                BancoDados.RecuperarConexao());
 
-            }
-            else
-            {
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@cpf",
+                cliente.Cpf);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@rg",
+                cliente.Rg);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@nome",
+                cliente.Nome);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@email",
+                cliente.Email);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@tel",
+                cliente.Tel);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@dataNasc",
+                cliente.DataNasc);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@endereco",
+                cliente.Endereco);
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@prevPagamento",
+                cliente.PrevPagamento);
 
-                sql = "UPDATE " + TABELA
-                    + " SET rg = @rg, nome = @nome, email = @email, tel = @tel, dataNasc = @dataNasc, " +
-                    "endereco = @endereco, prevPagamento = @prevPagamento"
-                    + " WHERE cpf = @cpf;";
-
-                // Associação do comando à conexão.
-                cmd = new MySqlCommand(sql,
-                    BancoDados.RecuperarConexao());
-
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@cpf",
-                    cliente.Cpf);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@rg",
-                    cliente.Rg);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@nome",
-                    cliente.Nome);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@email",
-                    cliente.Email);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@tel",
-                    cliente.Tel);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@dataNasc",
-                    cliente.DataNasc);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@endereco",
-                    cliente.Endereco);
-                // Inserção de valores nos parâmetros.
-                cmd.Parameters.AddWithValue("@prevPagamento",
-                    cliente.PrevPagamento);
-            }
-
-            // Preparação da consulta.
             cmd.Prepare();
 
-            // Execução da sentença SQL sem dados de retorno.
             cmd.ExecuteNonQuery();
+
+
 
         }
 
@@ -221,7 +181,7 @@ namespace Dao
 
                 // Inserção de valores nos parâmetros.
                 cmd.Parameters.AddWithValue("@nome",
-                    "%" + cliente.Nome + "%");
+                   "%" + cliente.Nome + "%");
 
                 // Preparação da consulta.
                 cmd.Prepare();
@@ -268,7 +228,7 @@ namespace Dao
 
                 // Inserção de valores nos parâmetros.
                 cmd.Parameters.AddWithValue("@cpf",
-                    cliente.Cpf );
+                    cliente.Cpf);
 
                 // Preparação da consulta.
                 cmd.Prepare();
@@ -296,6 +256,86 @@ namespace Dao
             }
 
             return resposta;
+        }
+
+        public static void Alterar(Cliente cliente, ulong cpfAntigo)
+        {
+            MySqlCommand cmd;
+            string sql;
+
+
+            sql = "UPDATE " + TABELA
+                + " SET cpf = @cpf, rg = @rg, nome = @nome, email = @email, tel = @tel, dataNasc = @dataNasc, " +
+                "endereco = @endereco, prevPagamento = @prevPagamento"
+                + " WHERE cpf = @cpfAntigo;";
+
+            // Associação do comando à conexão.
+            cmd = new MySqlCommand(sql,
+                BancoDados.RecuperarConexao());
+
+            // Inserção de valores nos parâmetros.
+            cmd.Parameters.AddWithValue("@cpf",
+                cliente.Cpf);
+
+            cmd.Parameters.AddWithValue("@rg",
+                cliente.Rg);
+
+            cmd.Parameters.AddWithValue("@nome",
+                cliente.Nome);
+
+            cmd.Parameters.AddWithValue("@email",
+                cliente.Email);
+
+            cmd.Parameters.AddWithValue("@tel",
+                cliente.Tel);
+
+            cmd.Parameters.AddWithValue("@dataNasc",
+                cliente.DataNasc);
+
+            cmd.Parameters.AddWithValue("@endereco",
+                cliente.Endereco);
+
+            cmd.Parameters.AddWithValue("@prevPagamento",
+                cliente.PrevPagamento);
+
+            cmd.Parameters.AddWithValue("@cpfAntigo",
+                cpfAntigo);
+
+
+            // Preparação da consulta.
+            cmd.Prepare();
+
+            // Execução da sentença SQL sem dados de retorno.
+            cmd.ExecuteNonQuery();
+
+        }
+
+        public static void Excluir(Cliente cliente)
+        {
+            // Só é possível excluir uma tarefa cujo id
+            // esteja especificado.
+            if (cliente.Cpf != 0)
+            {
+                MySqlCommand cmd;
+
+                // MUITA ATENÇÃO nos espaçamentos entre comandos.
+                string sql = "DELETE FROM " + TABELA
+                    + " WHERE cpf = @cpf;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@cpf",
+                    cliente.Cpf);
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL sem dados de retorno.
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

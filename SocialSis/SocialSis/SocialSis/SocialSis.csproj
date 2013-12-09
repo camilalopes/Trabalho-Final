@@ -118,6 +118,7 @@
     <Compile Include="ItemProduto.cs" />
     <Compile Include="ItemProdutoDao.cs" />
     <Compile Include="NotaFiscal.cs" />
+    <Compile Include="NotaFiscalAux.cs" />
     <Compile Include="NotaFiscalDao.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoDao.cs" />

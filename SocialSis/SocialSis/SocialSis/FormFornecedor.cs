@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -14,6 +14,8 @@ namespace GUI
 {
     public partial class FormFornecedor : Form
     {
+        Fornecedor fornecedorClicado;
+
         public FormFornecedor()
         {
             InitializeComponent();
@@ -42,6 +44,62 @@ namespace GUI
 
             Restaurar();
 
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+
+            Restaurar();
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            FornecedorDao.Alterar(new Fornecedor(ulong.Parse(txtCnpj.Text), txtNome.Text,
+                txtEndereco.Text, txtTelefone.Text, txtEmail.Text), fornecedorClicado.Cnpj);
+
+            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+
+            Restaurar();
+
+        }
+
+        private void dgvFornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Habilida e desabilita os seguintes botões
+            btAlterar.Enabled = true;
+            btExcluir.Enabled = true;
+            btSalvar.Enabled = false;
+            btCancelar.Enabled = true;
+
+            //Confere se a celula clicada é valida
+            if (e.RowIndex != -1)
+            {
+                // Recupera a fonte de dados como (as) ArrayList.
+                ArrayList fornecedores
+                     = dgvFornecedor.DataSource as ArrayList;
+
+                // Recupera o fornecedor clicado no DataGridView.
+                fornecedorClicado = (Fornecedor)fornecedores[e.RowIndex];
+
+                // Adiciona as propriedades do fornecedor clicado no
+                // respectivo campo
+                txtNome.Text = fornecedorClicado.Nome;
+                txtCnpj.Text = fornecedorClicado.Cnpj.ToString();
+                txtTelefone.Text = fornecedorClicado.Tel;
+                txtEmail.Text = fornecedorClicado.Email;
+                txtEndereco.Text = fornecedorClicado.Endereco;
+
+            }
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            FornecedorDao.Excluir(new Fornecedor(fornecedorClicado.Cnpj));
+
+            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+
+            Restaurar();
         }
     }
 }

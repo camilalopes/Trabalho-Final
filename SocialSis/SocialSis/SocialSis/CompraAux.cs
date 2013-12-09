@@ -17,23 +17,32 @@ namespace SocialSis
         private int quantidade;
         private string produto;
         private string cliente;
-        private int fk_cliente;
+        private ulong fk_cliente;
         private int id;
-        /*private string usuario;*/
+        private string usuario;
+        private int p1;
+        private DateTime dateTime1;
+        private DateTime dateTime2;
+        private double p2;
+        private int p3;
+
+
 
         public CompraAux() { }
 
-        public CompraAux(int id, DateTime dataPagamento, DateTime dataCompra, double total, int fK_cliente/* Usuario usuario*/)
+        public CompraAux(int id, DateTime dataPagamento, DateTime dataCompra, 
+            double total, ulong fK_cliente /* Usuario usuario*/)
         {
             SetId(id);
             DataCompra = dataCompra;
             DataPagamento = dataPagamento;
             Total = total;
             Cliente = cliente;
-           // Usuario = usuario;
+          // Usuario = usuario;
         }
 
-        public CompraAux(DateTime dataCompra, string cliente, string produto, int quantidade, DateTime dataPagamento, double total/* string usuario*/)
+        public CompraAux(DateTime dataCompra, string cliente, string produto, 
+            int quantidade, DateTime dataPagamento, double total, string usuario)
         {
             DataCompra = dataCompra;
             Cliente = cliente;
@@ -41,10 +50,47 @@ namespace SocialSis
             Quantidade = quantidade;
             DataPagamento = dataPagamento;
             Total = total;
-            Fk_cliente = fk_cliente;
-            /* Usuario = usuario;*/
+            SetFkCliente(fk_cliente);
+            Usuario = usuario;
             
         }
+
+        public CompraAux(DateTime dataCompra, ulong fk_cliente, string produto,
+                int quantidade, DateTime dataPagamento, double total, string usuario)
+        {
+            DataCompra = dataCompra;
+            Produto = produto;
+            Quantidade = quantidade;
+            DataPagamento = dataPagamento;
+            Total = total;
+            SetFkCliente(fk_cliente);
+            Usuario = usuario;
+
+        }
+
+        public CompraAux(DateTime dataCompra, string cliente, string produto, int quantidade, DateTime dataPagamento, double total /*string usuario*/)
+        {
+            DataCompra = dataCompra;
+            Cliente = cliente;
+            Produto = produto;
+            Quantidade = quantidade;
+            DataPagamento = dataPagamento;
+            Total = total;
+            SetFkCliente(fk_cliente);
+            Usuario = usuario;
+
+        }
+
+        public CompraAux(int p1, DateTime dateTime1, DateTime dateTime2, double p2, int p3)
+        {
+            // TODO: Complete member initialization
+            this.p1 = p1;
+            this.dateTime1 = dateTime1;
+            this.dateTime2 = dateTime2;
+            this.p2 = p2;
+            this.p3 = p3;
+        }
+
 
         public int Quantidade
         {
@@ -82,10 +128,14 @@ namespace SocialSis
             set { produto = value; }
         }
 
-        public int Fk_cliente
+        public void SetFkCliente(ulong fk_cliente)
         {
-            get { return fk_cliente; }
-            set { fk_cliente = value; }
+            this.fk_cliente = fk_cliente;
+        }
+
+        public ulong GetFkCliente()
+        {
+            return this.fk_cliente;
         }
         
 
@@ -107,11 +157,11 @@ namespace SocialSis
             return this.id;
         }
 
-        /* public string Usuario
+         public string Usuario
          {
              get { return usuario; }
              set { usuario = value; }
-         }*/
+         }
 
 
     }

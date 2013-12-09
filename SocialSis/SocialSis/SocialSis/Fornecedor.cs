@@ -17,6 +17,11 @@ namespace SocialSis
         public Fornecedor()
         { }
 
+        public Fornecedor(string nome)
+        {
+            Nome = nome;
+        }
+
         public Fornecedor(ulong cnpj, string nome, string endereco, string tel, string email)
         {
             Cnpj = cnpj;
@@ -24,6 +29,11 @@ namespace SocialSis
             Endereco = endereco;
             Tel = tel;
             Email = email;
+        }
+
+        public Fornecedor(ulong cnpj)
+        {
+            Cnpj = cnpj;
         }
 
         public string Email
@@ -56,6 +66,11 @@ namespace SocialSis
         {
             get { return endereco; }
             set { endereco = value; }
+        }
+
+        public override string ToString()
+        {
+            return nome;
         }
 
 

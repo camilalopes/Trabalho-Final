@@ -203,5 +203,33 @@ namespace Dao
             return resposta;
 
         }
+
+        public static void Excluir(Produto produto)
+        {
+            // Só é possível excluir uma tarefa cujo id
+            // esteja especificado.
+            if (produto.GetId() != 0)
+            {
+                MySqlCommand cmd;
+
+                // MUITA ATENÇÃO nos espaçamentos entre comandos.
+                string sql = "DELETE FROM " + TABELA
+                    + " WHERE id = @id;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@id",
+                    produto.GetId());
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL sem dados de retorno.
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

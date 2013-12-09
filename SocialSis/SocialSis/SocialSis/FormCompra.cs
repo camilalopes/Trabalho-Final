@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SocialSis;
 using Dao;
+using System.Collections;
 
 namespace GUI
 {
@@ -27,16 +28,22 @@ namespace GUI
             set { loginAux = value; }
         }
 
-     
-        DateTime dataCompra = DateTime.Now;
-        //Atributo responsavel por registrar a data de compra
 
-        DateTime dataPagamento;
+        public FormCompra(string loginUser)
+        {
+            loginAux = loginUser;
+        }
+
+
+        //Atributo responsavel por registrar a data de compra
+        DateTime dataCompra = DateTime.Now;
+
         //Atributo responsavel por registrar a data de pagamento
         //Pode-se unir os dois atributos acima, e manipulalo de acordo com a situação.
- 
+        DateTime dataPagamento;
+
+        //Atributo responsavel por resgistrar a compra.
         Compra compra;
-        //Atributo responsavel por resgistrar a compra para em seguida salva-la no banco de dados
 
         /// <summary>
         /// Construtor padrão da classe
@@ -54,9 +61,9 @@ namespace GUI
         private void FormCompra_Load(object sender, EventArgs e)
         {
             dgvCompra.DataSource = CompraDao.buscarTodos(new CompraAux());
-
+           
         }
-
+      
         /// <summary>
         /// Evento responsável por controlar a ação de salvar compras com o butão
         /// </summary>
@@ -64,27 +71,42 @@ namespace GUI
         /// <param name="e"></param>
         private void btSalvar_Click(object sender, EventArgs e)
         {
+            FormLogin fl = new FormLogin();
+
+            string nomeUsuario;
+           
+            nomeUsuario = loginAux;
+
+            Usuario user = new Usuario();
+            user = UsuarioDao.BuscarPorLogin(new Usuario(nomeUsuario));
+        
             //Verificação de pagamento
             if(chkPago.Checked == true)
             {
                 dataPagamento = DateTime.Now;
             }
 
+
+            double total = int.Parse(txtQuantidade.Text) *
+                ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text)).PrecoUnitario;
+
             //Instanciação de objeto para salva-lo no Banco de Dados
-            compra = new Compra(0, dataPagamento, dataCompra, ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text)).PrecoUnitario * int.Parse(txtQuantidade.Text),
-                ClienteDao.buscarPorNome(new Cliente(txtCliente.Text))/*, UsuarioDao.BuscarPorLogin(new Usuario(nome))*/);
-            
-            //Invocação do metodos para salvar o objeto acima
-            CompraDao.salvar(compra);
+            compra = new Compra(0, dataPagamento, dataCompra, total, ClienteDao.buscarPorNome(new Cliente(txtCliente.Text)), user);
 
             int idUltimaCompra;
 
-            idUltimaCompra = CompraDao.buscarTodos(new Compra()).Count;
+            CompraDao.salvar(compra);
 
-            ///Não sei para que serve 
+            idUltimaCompra = CompraDao.buscarTodos(new Compra()).Count;
+            // dgvCompra.DataSource = CompraDao.buscarTodos(new Compra());
+            compra.SetId(idUltimaCompra);
+                   
             ItemProdutoDao.salvar(new ItemProduto(0, int.Parse(txtQuantidade.Text),
-                CompraDao.BuscarPorId(new Compra(idUltimaCompra)),
+               compra,
                 ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text))));
+
+            dgvCompra.DataSource = CompraDao.buscarTodos(new CompraAux());
+
         }
 
         /// <summary>
@@ -100,6 +122,9 @@ namespace GUI
 
                 listaCliente.Visible = true;
                 listaCliente.DataSource = ClienteDao.buscarListaPorNome(new Cliente(txtCliente.Text));
+
+                btPesquisaPorCliente.Visible = true;
+                btPesquisarPorProduto.Visible = false;
 
             }
             //Contraresposta
@@ -117,6 +142,9 @@ namespace GUI
             //Verificação de campo nulo, ou com poucos valores
             if (txtProduto.Text != "" && txtProduto.Text.Length > 2)
             {
+
+                btPesquisaPorCliente.Visible = false;
+                btPesquisarPorProduto.Visible = true; ;
                 listaProduto.Visible = true;
                 listaProduto.DataSource = ProdutoDao.buscarListaPorDescricao(new Produto(txtProduto.Text));
             }
@@ -147,6 +175,39 @@ namespace GUI
             Produto produtoAux = ProdutoDao.buscarPorDescricao(new Produto(listaProduto.SelectedItem.ToString()));
             txtProduto.Text = listaProduto.SelectedItem.ToString();
             listaProduto.Visible = false;
+        }
+
+        private void btPesquisaPorCliente_Click(object sender, EventArgs e)
+        {
+
+
+
+            string nomeCliente;
+            nomeCliente = txtCliente.Text.Trim();
+
+            Cliente auxCliente = new Cliente();
+            auxCliente = ClienteDao.buscarPorNome(new Cliente(nomeCliente));
+
+            dgvCompra.DataSource = CompraDao.buscarPorCliente(auxCliente);
+            
+
+
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            txtCliente.Text = "";
+            txtProduto.Text = "";
+            txtQuantidade.Text = "";
+            dgvCompra.DataSource = CompraDao.buscarTodos(new Compra());
+            btPesquisaPorCliente.Visible = false;
+            btPesquisarPorProduto.Visible = false;
+        }
+
+        private void dgvCompra_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Fazer ..
+
         }
     }
 }

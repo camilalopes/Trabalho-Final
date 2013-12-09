@@ -45,7 +45,12 @@
             this.chkPago = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btSalvar = new System.Windows.Forms.Button();
+            this.btPesquisaPorCliente = new System.Windows.Forms.PictureBox();
+            this.btPesquisarPorProduto = new System.Windows.Forms.PictureBox();
+            this.btCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btPesquisaPorCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btPesquisarPorProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,11 +118,12 @@
             this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCompra.Location = new System.Drawing.Point(239, 46);
+            this.dgvCompra.Location = new System.Drawing.Point(292, 54);
             this.dgvCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.Size = new System.Drawing.Size(470, 440);
+            this.dgvCompra.Size = new System.Drawing.Size(522, 422);
             this.dgvCompra.TabIndex = 10;
+            this.dgvCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellClick);
             // 
             // shapeContainer1
             // 
@@ -126,15 +132,15 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(721, 503);
+            this.shapeContainer1.Size = new System.Drawing.Size(826, 494);
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 215;
-            this.lineShape1.X2 = 212;
+            this.lineShape1.X1 = 266;
+            this.lineShape1.X2 = 263;
             this.lineShape1.Y1 = 15;
             this.lineShape1.Y2 = 491;
             // 
@@ -142,7 +148,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(224, 9);
+            this.label5.Location = new System.Drawing.Point(289, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 18);
             this.label5.TabIndex = 12;
@@ -168,10 +174,10 @@
             this.listaCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaCliente.FormattingEnabled = true;
             this.listaCliente.ItemHeight = 16;
-            this.listaCliente.Location = new System.Drawing.Point(12, 93);
+            this.listaCliente.Location = new System.Drawing.Point(10, 93);
             this.listaCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listaCliente.Name = "listaCliente";
-            this.listaCliente.Size = new System.Drawing.Size(182, 96);
+            this.listaCliente.Size = new System.Drawing.Size(184, 96);
             this.listaCliente.TabIndex = 15;
             this.listaCliente.Visible = false;
             this.listaCliente.Click += new System.EventHandler(this.listaCliente_Click);
@@ -213,21 +219,61 @@
             this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(10, 466);
+            this.btSalvar.Location = new System.Drawing.Point(12, 452);
             this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(188, 24);
+            this.btSalvar.Size = new System.Drawing.Size(118, 24);
             this.btSalvar.TabIndex = 9;
             this.btSalvar.Text = "Salvar Compra";
             this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // btPesquisaPorCliente
+            // 
+            this.btPesquisaPorCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPesquisaPorCliente.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisaPorCliente.Image")));
+            this.btPesquisaPorCliente.Location = new System.Drawing.Point(200, 76);
+            this.btPesquisaPorCliente.Name = "btPesquisaPorCliente";
+            this.btPesquisaPorCliente.Size = new System.Drawing.Size(28, 50);
+            this.btPesquisaPorCliente.TabIndex = 18;
+            this.btPesquisaPorCliente.TabStop = false;
+            this.btPesquisaPorCliente.Visible = false;
+            this.btPesquisaPorCliente.Click += new System.EventHandler(this.btPesquisaPorCliente_Click);
+            // 
+            // btPesquisarPorProduto
+            // 
+            this.btPesquisarPorProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPesquisarPorProduto.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisarPorProduto.Image")));
+            this.btPesquisarPorProduto.Location = new System.Drawing.Point(200, 213);
+            this.btPesquisarPorProduto.Name = "btPesquisarPorProduto";
+            this.btPesquisarPorProduto.Size = new System.Drawing.Size(28, 50);
+            this.btPesquisarPorProduto.TabIndex = 19;
+            this.btPesquisarPorProduto.TabStop = false;
+            this.btPesquisarPorProduto.Visible = false;
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(136, 452);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(118, 24);
+            this.btCancelar.TabIndex = 20;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // FormCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(721, 503);
+            this.ClientSize = new System.Drawing.Size(826, 494);
+            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btPesquisarPorProduto);
+            this.Controls.Add(this.btPesquisaPorCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chkPago);
             this.Controls.Add(this.listaCliente);
@@ -253,6 +299,8 @@
             this.Text = "Comprar";
             this.Load += new System.EventHandler(this.FormCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btPesquisaPorCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btPesquisarPorProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +324,8 @@
         private System.Windows.Forms.CheckBox chkPago;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.PictureBox btPesquisaPorCliente;
+        private System.Windows.Forms.PictureBox btPesquisarPorProduto;
+        private System.Windows.Forms.Button btCancelar;
     }
 }

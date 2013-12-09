@@ -35,7 +35,7 @@ namespace Dao
                     item.Insumo.GetId());
 
                 cmd.Parameters.AddWithValue("@fk_notafiscal",
-                    item.NotaFiscal.NBoleto);
+                    item.NotaFiscal.GetId());
 
             }
             else
