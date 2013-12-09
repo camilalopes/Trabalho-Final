@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFornecedor));
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,9 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
+            this.btProcurarPorNome = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFornecedor
@@ -127,35 +130,35 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(15, 65);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(212, 20);
+            this.txtNome.Size = new System.Drawing.Size(198, 20);
             this.txtNome.TabIndex = 19;
             // 
             // txtCnpj
             // 
             this.txtCnpj.Location = new System.Drawing.Point(17, 118);
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(210, 20);
+            this.txtCnpj.Size = new System.Drawing.Size(196, 20);
             this.txtCnpj.TabIndex = 20;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(17, 169);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(210, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(196, 20);
             this.txtTelefone.TabIndex = 21;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(17, 225);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(210, 20);
+            this.txtEmail.Size = new System.Drawing.Size(196, 20);
             this.txtEmail.TabIndex = 22;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(17, 276);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(210, 20);
+            this.txtEndereco.Size = new System.Drawing.Size(196, 20);
             this.txtEndereco.TabIndex = 23;
             // 
             // shapeContainer1
@@ -190,6 +193,7 @@
             // btExcluir
             // 
             this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btExcluir.Enabled = false;
             this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExcluir.Location = new System.Drawing.Point(129, 361);
@@ -203,6 +207,7 @@
             // btCancelar
             // 
             this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.Enabled = false;
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(129, 331);
@@ -216,6 +221,7 @@
             // btAlterar
             // 
             this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.Enabled = false;
             this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAlterar.Location = new System.Drawing.Point(12, 363);
@@ -239,11 +245,23 @@
             this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click_1);
             // 
+            // btProcurarPorNome
+            // 
+            this.btProcurarPorNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProcurarPorNome.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarPorNome.Image")));
+            this.btProcurarPorNome.Location = new System.Drawing.Point(219, 65);
+            this.btProcurarPorNome.Name = "btProcurarPorNome";
+            this.btProcurarPorNome.Size = new System.Drawing.Size(28, 21);
+            this.btProcurarPorNome.TabIndex = 105;
+            this.btProcurarPorNome.TabStop = false;
+            this.btProcurarPorNome.Click += new System.EventHandler(this.btProcurarPorNome_Click);
+            // 
             // FormFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 421);
+            this.Controls.Add(this.btProcurarPorNome);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btAlterar);
@@ -265,7 +283,9 @@
             this.Name = "FormFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormFornecedor";
+            this.Load += new System.EventHandler(this.FormFornecedor_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +312,6 @@
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.PictureBox btProcurarPorNome;
     }
 }

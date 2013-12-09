@@ -43,6 +43,7 @@ namespace GUI
 
             btCancelar.Enabled = false;
             btExcluir.Enabled = false;
+            btAlterar.Enabled = false;
             btSalvar.Enabled = true;
 
         }
@@ -158,6 +159,19 @@ namespace GUI
 
             Restaurar();
 
+
+        }
+
+        private void btProcurarPorNome_Click(object sender, EventArgs e)
+        {
+            dgvCliente.DataSource = ClienteDao.buscarListaPorNome(new Cliente(txtNome.Text));
+        }
+
+        private void btProcurarPorCpf_Click(object sender, EventArgs e)
+        {
+            ArrayList clientes = new ArrayList();
+            clientes.Add(ClienteDao.buscarPorCpf(new Cliente(ulong.Parse(txtCpf.Text))));
+            dgvCliente.DataSource = clientes;
 
         }
 

@@ -36,7 +36,7 @@ namespace GUI
             btCancelar.Enabled = false;
             btExcluir.Enabled = false;
             btSalvar.Enabled = true;
-
+            btAlterar.Enabled = false;
         }
 
         /// <summary>
@@ -116,6 +116,11 @@ namespace GUI
 
             Restaurar();
 
+        }
+
+        private void btProcurarPorNome_Click(object sender, EventArgs e)
+        {
+            dgvProduto.DataSource = ProdutoDao.buscarListaPorDescricao(new Produto(txtDescricao.Text));
         }
 
 

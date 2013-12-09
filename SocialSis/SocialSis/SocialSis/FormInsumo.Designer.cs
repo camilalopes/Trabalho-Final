@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInsumo));
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -41,7 +42,9 @@
             this.btSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
+            this.btProcurarPorNome = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -69,7 +72,7 @@
             this.txtDescricao.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.Location = new System.Drawing.Point(16, 72);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(199, 22);
+            this.txtDescricao.Size = new System.Drawing.Size(175, 22);
             this.txtDescricao.TabIndex = 7;
             // 
             // dgvInsumo
@@ -79,7 +82,7 @@
             this.dgvInsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInsumo.Location = new System.Drawing.Point(274, 39);
             this.dgvInsumo.Name = "dgvInsumo";
-            this.dgvInsumo.Size = new System.Drawing.Size(376, 199);
+            this.dgvInsumo.Size = new System.Drawing.Size(376, 207);
             this.dgvInsumo.TabIndex = 10;
             this.dgvInsumo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInsumo_CellClick);
             // 
@@ -89,9 +92,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(254, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 18);
+            this.label4.Size = new System.Drawing.Size(164, 18);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Produtos Cadastrados:";
+            this.label4.Text = "Insumos Cadastrados:";
             // 
             // shapeContainer1
             // 
@@ -119,7 +122,7 @@
             this.btExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExcluir.Location = new System.Drawing.Point(121, 220);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(94, 24);
+            this.btExcluir.Size = new System.Drawing.Size(94, 26);
             this.btExcluir.TabIndex = 40;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = false;
@@ -182,11 +185,23 @@
             this.txtPreco.Size = new System.Drawing.Size(100, 22);
             this.txtPreco.TabIndex = 41;
             // 
+            // btProcurarPorNome
+            // 
+            this.btProcurarPorNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProcurarPorNome.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarPorNome.Image")));
+            this.btProcurarPorNome.Location = new System.Drawing.Point(197, 72);
+            this.btProcurarPorNome.Name = "btProcurarPorNome";
+            this.btProcurarPorNome.Size = new System.Drawing.Size(28, 21);
+            this.btProcurarPorNome.TabIndex = 106;
+            this.btProcurarPorNome.TabStop = false;
+            this.btProcurarPorNome.Click += new System.EventHandler(this.btProcurarPorNome_Click);
+            // 
             // FormInsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 264);
+            this.Controls.Add(this.btProcurarPorNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.btExcluir);
@@ -199,10 +214,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.shapeContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormInsumo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInsumo";
             this.Load += new System.EventHandler(this.FormInsumo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +241,6 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.PictureBox btProcurarPorNome;
     }
 }

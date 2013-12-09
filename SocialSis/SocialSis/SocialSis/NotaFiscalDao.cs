@@ -17,7 +17,8 @@ namespace Dao
         {
             MySqlCommand cmd;
             string sql;
-
+            if (notaFiscal.GetId() == 0)
+            {
                 sql = "INSERT INTO " + TABELA
                     + " VALUES (default, @nBoleto, @precoTotal, @dataPagamento, @dataVencimento , @dataCompra"
                     + ", @fk_fornecedor);";
@@ -44,6 +45,24 @@ namespace Dao
 
                 cmd.Parameters.AddWithValue("nBoleto",
                     notaFiscal.NBoleto);
+            }
+            else
+            {
+                sql = "UPDATE " + TABELA
+                     + " SET dataPagamento = @dataPagamento"
+                     + " WHERE id = @id;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@id",
+                    notaFiscal.GetId());
+
+                cmd.Parameters.AddWithValue("@dataPagamento",
+                    notaFiscal.DataPagamento);
+            }
 
 
 
@@ -94,48 +113,49 @@ namespace Dao
         }
 
         public static ArrayList BuscarTodos(NotaFiscalAux nfAux)
-         {
-             ArrayList notasfiscais = new ArrayList();
+        {
+            ArrayList notasfiscais = new ArrayList();
 
-             MySqlCommand cmd;
+            MySqlCommand cmd;
 
-             string sql = "select nf.nBoleto as boleto, nf.dataVencimento as vencimento, nf.dataCompra as dataCompra, nf.precototal as total, nf.dataPagamento as" +
-             " dataPagamento, ii.quantidade as quantidade, i.descricao as descricao, f.nome as" +
-             " nome from insumo i inner join iteminsumo ii on ii.fk_insumo = i.id inner join" +
-             " notafiscal nf on nf.id = ii.fk_notafiscal inner join fornecedor f on f.cnpj = nf.fk_fornecedor;";
-
-
-             // Associação do comando à conexão.
-             cmd = new MySqlCommand(sql, BancoDados.RecuperarConexao());
-
-             // Preparação da consulta.
-             cmd.Prepare();
-
-             // Execução da sentença SQL, com dados de retorno
-             // associados a um objeto para posterior leitura.
-             MySqlDataReader leitor = cmd.ExecuteReader();
+            string sql = "select nf.id as id, nf.nBoleto as boleto, nf.dataVencimento as vencimento, nf.dataCompra as dataCompra, nf.precototal as total, nf.dataPagamento as" +
+            " dataPagamento, ii.quantidade as quantidade, i.descricao as descricao, f.nome as" +
+            " nome from insumo i inner join iteminsumo ii on ii.fk_insumo = i.id inner join" +
+            " notafiscal nf on nf.id = ii.fk_notafiscal inner join fornecedor f on f.cnpj = nf.fk_fornecedor;";
 
 
-             while (leitor.Read())
-             {
-                 notasfiscais.Add(
-                     new NotaFiscalAux(ulong.Parse(leitor["boleto"].ToString()),
-                         leitor["nome"].ToString(),
-                         leitor["descricao"].ToString(),
-                         int.Parse(leitor["quantidade"].ToString()),
-                         DateTime.Parse(leitor["dataPagamento"].ToString()), 
-                         DateTime.Parse(leitor["vencimento"].ToString()),
-                        DateTime.Parse(leitor["dataCompra"].ToString()),
-                        double.Parse(leitor["total"].ToString())));
-             }
+            // Associação do comando à conexão.
+            cmd = new MySqlCommand(sql, BancoDados.RecuperarConexao());
 
-             // Libera recursos de memória.
-             leitor.Close();
+            // Preparação da consulta.
+            cmd.Prepare();
+
+            // Execução da sentença SQL, com dados de retorno
+            // associados a um objeto para posterior leitura.
+            MySqlDataReader leitor = cmd.ExecuteReader();
 
 
-             return notasfiscais;
+            while (leitor.Read())
+            {
+                notasfiscais.Add(
+                    new NotaFiscalAux(int.Parse(leitor["id"].ToString()),
+                        ulong.Parse(leitor["boleto"].ToString()),
+                        leitor["nome"].ToString(),
+                        leitor["descricao"].ToString(),
+                        int.Parse(leitor["quantidade"].ToString()),
+                        DateTime.Parse(leitor["dataPagamento"].ToString()),
+                        DateTime.Parse(leitor["vencimento"].ToString()),
+                       DateTime.Parse(leitor["dataCompra"].ToString()),
+                       double.Parse(leitor["total"].ToString())));
+            }
 
-         }
+            // Libera recursos de memória.
+            leitor.Close();
+
+
+            return notasfiscais;
+
+        }
 
         /*
          public static Compra BuscarPorId(Compra compra)

@@ -55,7 +55,11 @@
             this.btExcluir = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
+            this.btProcurarPorNome = new System.Windows.Forms.PictureBox();
+            this.btProcurarPorCpf = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorCpf)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -206,7 +210,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 9);
+            this.label2.Location = new System.Drawing.Point(243, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(212, 18);
             this.label2.TabIndex = 87;
@@ -267,10 +271,10 @@
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 227;
-            this.lineShape1.X2 = 227;
-            this.lineShape1.Y1 = 10;
-            this.lineShape1.Y2 = 510;
+            this.lineShape1.X1 = 236;
+            this.lineShape1.X2 = 236;
+            this.lineShape1.Y1 = 8;
+            this.lineShape1.Y2 = 508;
             // 
             // txtDataNasc
             // 
@@ -297,6 +301,7 @@
             // btExcluir
             // 
             this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btExcluir.Enabled = false;
             this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExcluir.Location = new System.Drawing.Point(114, 491);
@@ -310,6 +315,7 @@
             // btCancelar
             // 
             this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.Enabled = false;
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(114, 457);
@@ -323,6 +329,7 @@
             // btAlterar
             // 
             this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.Enabled = false;
             this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAlterar.Location = new System.Drawing.Point(10, 491);
@@ -333,12 +340,36 @@
             this.btAlterar.UseVisualStyleBackColor = false;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
+            // btProcurarPorNome
+            // 
+            this.btProcurarPorNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProcurarPorNome.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarPorNome.Image")));
+            this.btProcurarPorNome.Location = new System.Drawing.Point(204, 73);
+            this.btProcurarPorNome.Name = "btProcurarPorNome";
+            this.btProcurarPorNome.Size = new System.Drawing.Size(28, 21);
+            this.btProcurarPorNome.TabIndex = 104;
+            this.btProcurarPorNome.TabStop = false;
+            this.btProcurarPorNome.Click += new System.EventHandler(this.btProcurarPorNome_Click);
+            // 
+            // btProcurarPorCpf
+            // 
+            this.btProcurarPorCpf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProcurarPorCpf.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarPorCpf.Image")));
+            this.btProcurarPorCpf.Location = new System.Drawing.Point(204, 125);
+            this.btProcurarPorCpf.Name = "btProcurarPorCpf";
+            this.btProcurarPorCpf.Size = new System.Drawing.Size(28, 21);
+            this.btProcurarPorCpf.TabIndex = 107;
+            this.btProcurarPorCpf.TabStop = false;
+            this.btProcurarPorCpf.Click += new System.EventHandler(this.btProcurarPorCpf_Click);
+            // 
             // FormClienteProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(755, 527);
+            this.Controls.Add(this.btProcurarPorCpf);
+            this.Controls.Add(this.btProcurarPorNome);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btCancelar);
@@ -374,6 +405,8 @@
             this.Text = "Cliente Professor";
             this.Load += new System.EventHandler(this.FormClienteProfessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorCpf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +440,7 @@
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.PictureBox btProcurarPorNome;
+        private System.Windows.Forms.PictureBox btProcurarPorCpf;
     }
 }

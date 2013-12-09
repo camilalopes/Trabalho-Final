@@ -48,6 +48,7 @@
             this.btPesquisaPorCliente = new System.Windows.Forms.PictureBox();
             this.btPesquisarPorProduto = new System.Windows.Forms.PictureBox();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.btAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPesquisaPorCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPesquisarPorProduto)).BeginInit();
@@ -132,7 +133,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(826, 494);
+            this.shapeContainer1.Size = new System.Drawing.Size(826, 513);
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
@@ -254,6 +255,7 @@
             // btCancelar
             // 
             this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.Enabled = false;
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(136, 452);
@@ -265,12 +267,28 @@
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // btAlterar
+            // 
+            this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.Enabled = false;
+            this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterar.Location = new System.Drawing.Point(66, 485);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(118, 24);
+            this.btAlterar.TabIndex = 21;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            // 
             // FormCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(826, 494);
+            this.ClientSize = new System.Drawing.Size(826, 513);
+            this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btPesquisarPorProduto);
             this.Controls.Add(this.btPesquisaPorCliente);
@@ -327,5 +345,6 @@
         private System.Windows.Forms.PictureBox btPesquisaPorCliente;
         private System.Windows.Forms.PictureBox btPesquisarPorProduto;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btAlterar;
     }
 }

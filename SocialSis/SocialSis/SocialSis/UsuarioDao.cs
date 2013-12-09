@@ -207,7 +207,8 @@ namespace Dao
                 {
                     // adiciona o respectivo objeto Destinatario, construído
                     // com os dados de retorno, à coleção de destinatarios.
-                    resposta = (new Usuario(leitor["login"].ToString(), leitor["senha"].ToString(), bool.Parse(leitor["adm"].ToString())));
+                    resposta = (new Usuario(leitor["login"].ToString(),
+                        leitor["senha"].ToString(), bool.Parse(leitor["adm"].ToString())));
 
                 }
 
@@ -245,6 +246,60 @@ namespace Dao
                 // Execução da sentença SQL sem dados de retorno.
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public static ArrayList BuscarListaPorNome(Usuario usuario)
+        {
+            // Reposta padrão.
+            ArrayList usuarios = null;
+
+            // Só é possível localizar uma item cuja descrição
+            // esteja especificada.
+            if (usuario.Login != null)
+            {
+                // Cria uma coleção vazia.
+                usuarios = new ArrayList();
+
+                MySqlCommand cmd;
+
+
+                string sql = "SELECT * FROM " + TABELA
+                    + " WHERE nome LIKE @nome;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.RecuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@nome",
+                    "%" + usuario.Login + "%");
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    // adiciona o respectivo objeto cliente, construído
+                    // com os dados de retorno, à coleção de items.
+                    usuarios.Add(
+                    new Usuario(
+                        leitor["login"].ToString(), leitor["senha"].ToString(),
+                        leitor["nome"].ToString(), ulong.Parse(leitor["telefone"].ToString()),
+                        leitor["email"].ToString(), bool.Parse(leitor["adm"].ToString())
+                    ));
+
+
+                }
+
+                // Libera recursos de memória.
+                leitor.Close();
+            }
+
+            return usuarios;
         }
     }
 }

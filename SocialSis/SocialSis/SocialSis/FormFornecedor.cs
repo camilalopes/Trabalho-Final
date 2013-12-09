@@ -28,11 +28,9 @@ namespace GUI
             txtTelefone.Text = "";
             txtEmail.Text = "";
             txtEndereco.Text = "";
-        }
 
-        private void FormFornecedor_Load(object sender, EventArgs e)
-        {
-            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+            btSalvar.Enabled = true;
+            btCancelar.Enabled = false;
         }
 
         private void btSalvar_Click_1(object sender, EventArgs e)
@@ -40,7 +38,7 @@ namespace GUI
             FornecedorDao.salvar(new Fornecedor(ulong.Parse(txtCnpj.Text), txtNome.Text,
                 txtEndereco.Text, txtTelefone.Text, txtEmail.Text));
 
-            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+            dgvFornecedor.DataSource = FornecedorDao.BuscarTodos();
 
             Restaurar();
 
@@ -48,7 +46,7 @@ namespace GUI
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
-            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+            dgvFornecedor.DataSource = FornecedorDao.BuscarTodos();
 
             Restaurar();
         }
@@ -58,7 +56,7 @@ namespace GUI
             FornecedorDao.Alterar(new Fornecedor(ulong.Parse(txtCnpj.Text), txtNome.Text,
                 txtEndereco.Text, txtTelefone.Text, txtEmail.Text), fornecedorClicado.Cnpj);
 
-            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+            dgvFornecedor.DataSource = FornecedorDao.BuscarTodos();
 
             Restaurar();
 
@@ -97,9 +95,20 @@ namespace GUI
         {
             FornecedorDao.Excluir(new Fornecedor(fornecedorClicado.Cnpj));
 
-            dgvFornecedor.DataSource = FornecedorDao.buscarTodos(new Fornecedor());
+            dgvFornecedor.DataSource = FornecedorDao.BuscarTodos();
 
             Restaurar();
+        }
+
+        private void btProcurarPorNome_Click(object sender, EventArgs e)
+        {
+            FornecedorDao.BuscarListaPorNome(new Fornecedor(txtNome.Text));
+        }
+
+        private void FormFornecedor_Load_1(object sender, EventArgs e)
+        {
+            dgvFornecedor.DataSource = FornecedorDao.BuscarTodos();
+
         }
     }
 }

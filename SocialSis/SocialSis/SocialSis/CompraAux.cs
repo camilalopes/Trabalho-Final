@@ -41,7 +41,7 @@ namespace SocialSis
           // Usuario = usuario;
         }
 
-        public CompraAux(DateTime dataCompra, string cliente, string produto, 
+        public CompraAux(int id, DateTime dataCompra, string cliente, string produto, 
             int quantidade, DateTime dataPagamento, double total, string usuario)
         {
             DataCompra = dataCompra;
@@ -50,8 +50,8 @@ namespace SocialSis
             Quantidade = quantidade;
             DataPagamento = dataPagamento;
             Total = total;
-            SetFkCliente(fk_cliente);
             Usuario = usuario;
+            SetId(id);
             
         }
 
@@ -80,6 +80,8 @@ namespace SocialSis
             Usuario = usuario;
 
         }
+
+
 
         public CompraAux(int p1, DateTime dateTime1, DateTime dateTime2, double p2, int p3)
         {

@@ -101,5 +101,10 @@ namespace GUI
             Restaurar();
 
         }
+
+        private void btProcurarPorNome_Click(object sender, EventArgs e)
+        {
+            dgvInsumo.DataSource = InsumoDao.BuscarListaPorDescricao(new Insumo(txtDescricao.Text));
+        }
     }
 }

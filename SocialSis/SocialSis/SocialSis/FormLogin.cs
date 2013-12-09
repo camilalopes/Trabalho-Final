@@ -47,7 +47,7 @@ namespace GUI
             {
                 // Abre a janela principal
                 FormPrincipal fp = new FormPrincipal();
-                FormCompra fc;
+               
 
 
                 // "Fecha" janela de login

@@ -41,9 +41,10 @@ namespace SocialSis
             SetId(id);
         }
 
-        public Compra(DateTime dataCompra)
+        public Compra(int id, DateTime dataPagamento)
         {
-            DataCompra = dataCompra;
+            SetId(id);
+            DataPagamento = dataPagamento;
         }
 
         /// <summary>
@@ -125,19 +126,6 @@ namespace SocialSis
         {
             get { return usuario; }
             set { usuario = value; }
-        }
-
-        /// <summary>
-        /// Metodo responsavel por calcular o valor total da compra, produto e quantidade como parametros
-        /// </summary>
-        /// <param name="produto"></param>
-        /// <param name="quantidade"></param>
-        /// <returns></returns>
-        public double calcularTotal(Produto produto, int quantidade)
-        {
-            double total;
-            total = produto.PrecoUnitario * quantidade;
-            return total;          
         }
     }
 }

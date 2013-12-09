@@ -1360,10 +1360,10 @@
     <value>1</value>
   </data>
   <data name="visualizarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Visualizar Clientes</value>
+    <value>Visualizar</value>
   </data>
   <data name="clienteToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -1381,10 +1381,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="visualizarToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Visualizar Produtos</value>
+    <value>Visualizar</value>
   </data>
   <data name="pRODUTOToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -1396,7 +1396,7 @@
     <value>PRODUTOS</value>
   </data>
   <data name="visualizarToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem2.Text" xml:space="preserve">
     <value>Realizar</value>
@@ -1411,7 +1411,7 @@
     <value>COMPRA</value>
   </data>
   <data name="visualizarToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem4.Text" xml:space="preserve">
     <value>Visualizar</value>
@@ -1423,7 +1423,7 @@
     <value>FORNECEDOR</value>
   </data>
   <data name="visualizarToolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="visualizarToolStripMenuItem5.Text" xml:space="preserve">
     <value>Visualizar</value>

@@ -144,8 +144,7 @@ namespace GUI
 
         private void visualizarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            FormFornecedor ff = new FormFornecedor();
-            ff.Show();
+            new FormFornecedor().Show();
         }
 
         private void visualizarToolStripMenuItem6_Click(object sender, EventArgs e)

@@ -126,7 +126,7 @@ namespace GUI
                      = dgvUsuario.DataSource as ArrayList;
 
                 // Recupera o usuario clicado no DataGridView.
-                Usuario usuarioClicado = (Usuario)usuarios[e.RowIndex];
+                usuarioClicado = (Usuario)usuarios[e.RowIndex];
 
                 //Adiciona as propiedades do usuario clicado
                 //em cada TextBox
@@ -153,6 +153,11 @@ namespace GUI
             dgvUsuario.DataSource = UsuarioDao.BuscarTodos(new Usuario());
 
             Restaurar();
+        }
+
+        private void btProcurarPorNome_Click(object sender, EventArgs e)
+        {
+            dgvUsuario.DataSource = UsuarioDao.BuscarListaPorNome(new Usuario(txtNome.Text));
         }
     }
 }

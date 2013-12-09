@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -49,7 +50,9 @@
             this.btAlterar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
+            this.btProcurarPorNome = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -76,10 +79,10 @@
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 271;
-            this.lineShape1.X2 = 271;
-            this.lineShape1.Y1 = 26;
-            this.lineShape1.Y2 = 448;
+            this.lineShape1.X1 = 275;
+            this.lineShape1.X2 = 275;
+            this.lineShape1.Y1 = 19;
+            this.lineShape1.Y2 = 441;
             // 
             // dgvUsuario
             // 
@@ -108,7 +111,7 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(15, 76);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(182, 20);
+            this.txtNome.Size = new System.Drawing.Size(199, 20);
             this.txtNome.TabIndex = 17;
             // 
             // label2
@@ -165,7 +168,7 @@
             // 
             this.txtLogin.Location = new System.Drawing.Point(15, 128);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(182, 20);
+            this.txtLogin.Size = new System.Drawing.Size(199, 20);
             this.txtLogin.TabIndex = 23;
             // 
             // txtSenha
@@ -173,21 +176,21 @@
             this.txtSenha.Location = new System.Drawing.Point(14, 179);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(182, 20);
+            this.txtSenha.Size = new System.Drawing.Size(199, 20);
             this.txtSenha.TabIndex = 24;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(15, 231);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(182, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(199, 20);
             this.txtTelefone.TabIndex = 25;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(15, 291);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(182, 20);
+            this.txtEmail.Size = new System.Drawing.Size(199, 20);
             this.txtEmail.TabIndex = 26;
             // 
             // cboTipo
@@ -195,7 +198,7 @@
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(15, 346);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(181, 21);
+            this.cboTipo.Size = new System.Drawing.Size(198, 21);
             this.cboTipo.TabIndex = 27;
             // 
             // label8
@@ -260,11 +263,23 @@
             this.btExcluir.UseVisualStyleBackColor = false;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
+            // btProcurarPorNome
+            // 
+            this.btProcurarPorNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProcurarPorNome.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarPorNome.Image")));
+            this.btProcurarPorNome.Location = new System.Drawing.Point(220, 76);
+            this.btProcurarPorNome.Name = "btProcurarPorNome";
+            this.btProcurarPorNome.Size = new System.Drawing.Size(28, 21);
+            this.btProcurarPorNome.TabIndex = 106;
+            this.btProcurarPorNome.TabStop = false;
+            this.btProcurarPorNome.Click += new System.EventHandler(this.btProcurarPorNome_Click);
+            // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 462);
+            this.Controls.Add(this.btProcurarPorNome);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btAlterar);
@@ -290,6 +305,7 @@
             this.Text = "FormUsuario";
             this.Load += new System.EventHandler(this.FormUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +334,6 @@
         private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btExcluir;
+        private System.Windows.Forms.PictureBox btProcurarPorNome;
     }
 }

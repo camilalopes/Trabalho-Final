@@ -37,7 +37,6 @@
             this.listaFornecedor = new System.Windows.Forms.ListBox();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.listaInsumo = new System.Windows.Forms.ListBox();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtInsumo = new System.Windows.Forms.TextBox();
@@ -48,16 +47,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNBoleto = new System.Windows.Forms.TextBox();
+            this.btAlterar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNota)).BeginInit();
             this.SuspendLayout();
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 263;
-            this.lineShape1.X2 = 263;
-            this.lineShape1.Y1 = 13;
-            this.lineShape1.Y2 = 603;
+            this.lineShape1.X1 = 268;
+            this.lineShape1.X2 = 268;
+            this.lineShape1.Y1 = 14;
+            this.lineShape1.Y2 = 604;
             // 
             // shapeContainer1
             // 
@@ -66,7 +68,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(831, 604);
+            this.shapeContainer1.Size = new System.Drawing.Size(831, 628);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -89,8 +91,9 @@
             this.dgvNota.Location = new System.Drawing.Point(305, 70);
             this.dgvNota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvNota.Name = "dgvNota";
-            this.dgvNota.Size = new System.Drawing.Size(497, 485);
+            this.dgvNota.Size = new System.Drawing.Size(497, 516);
             this.dgvNota.TabIndex = 13;
+            this.dgvNota.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNota_CellClick);
             // 
             // label6
             // 
@@ -151,20 +154,6 @@
             this.listaInsumo.TabIndex = 25;
             this.listaInsumo.Visible = false;
             this.listaInsumo.Click += new System.EventHandler(this.listaInsumo_Click);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(8, 570);
-            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(188, 24);
-            this.btSalvar.TabIndex = 24;
-            this.btSalvar.Text = "Salvar Nota";
-            this.btSalvar.UseVisualStyleBackColor = false;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // txtQuantidade
             // 
@@ -261,11 +250,58 @@
             this.txtNBoleto.Size = new System.Drawing.Size(184, 20);
             this.txtNBoleto.TabIndex = 33;
             // 
+            // btAlterar
+            // 
+            this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.Enabled = false;
+            this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterar.Location = new System.Drawing.Point(63, 595);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(118, 24);
+            this.btAlterar.TabIndex = 36;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCancelar.Enabled = false;
+            this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(133, 562);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(118, 24);
+            this.btCancelar.TabIndex = 35;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Location = new System.Drawing.Point(9, 562);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(118, 24);
+            this.btSalvar.TabIndex = 34;
+            this.btSalvar.Text = "Salvar Compra";
+            this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click_1);
+            // 
             // FormNotaFiscal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 604);
+            this.ClientSize = new System.Drawing.Size(831, 628);
+            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.txtNBoleto);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -275,7 +311,6 @@
             this.Controls.Add(this.listaFornecedor);
             this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.listaInsumo);
-            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtInsumo);
@@ -306,7 +341,6 @@
         private System.Windows.Forms.ListBox listaFornecedor;
         private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.ListBox listaInsumo;
-        private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtInsumo;
@@ -317,5 +351,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNBoleto;
+        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btSalvar;
     }
 }

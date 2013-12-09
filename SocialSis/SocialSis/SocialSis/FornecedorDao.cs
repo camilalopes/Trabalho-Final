@@ -52,13 +52,10 @@ namespace Dao
 
         }
 
-        public static ArrayList buscarTodos(Fornecedor fornecedor)
+        public static ArrayList BuscarTodos()
         {
             // Reposta padrão.
-            ArrayList fornecedores = null;
-
-            // Cria uma coleção vazia.
-            fornecedores = new ArrayList();
+            ArrayList fornecedores = new ArrayList();
 
             MySqlCommand cmd;
 
@@ -83,8 +80,11 @@ namespace Dao
                 // com os dados de retorno, à coleção de items.
                 fornecedores.Add(
                     new Fornecedor(
-                         ulong.Parse(leitor["cnpj"].ToString()), leitor["nome"].ToString(), leitor["endereco"].ToString(),
-                         leitor["email"].ToString(), leitor["tel"].ToString()
+                         ulong.Parse(leitor["cnpj"].ToString()), 
+                         leitor["nome"].ToString(),
+                         leitor["endereco"].ToString(),
+                         leitor["email"].ToString(), 
+                         leitor["tel"].ToString()
                         ));
 
 

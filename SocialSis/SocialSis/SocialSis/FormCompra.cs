@@ -18,6 +18,8 @@ namespace GUI
     /// </summary>
     public partial class FormCompra : Form
     {
+        CompraAux compraClicada;
+
         //cria uma propriedade que permite pegar uma string
         //e guardar o login do usuario
         private string loginAux;
@@ -53,6 +55,16 @@ namespace GUI
             InitializeComponent();
         }
 
+        public void Restaurar()
+        {
+            txtCliente.Text = "";
+            txtProduto.Text = "";
+            txtQuantidade.Text = "";
+            btSalvar.Enabled = true;
+            btCancelar.Enabled = false;
+
+        }
+
         /// <summary>
         /// Evento responsável por controlar o que acontecerar enquanto a janela está carregando
         /// </summary>
@@ -61,9 +73,9 @@ namespace GUI
         private void FormCompra_Load(object sender, EventArgs e)
         {
             dgvCompra.DataSource = CompraDao.buscarTodos(new CompraAux());
-           
+
         }
-      
+
         /// <summary>
         /// Evento responsável por controlar a ação de salvar compras com o butão
         /// </summary>
@@ -71,17 +83,17 @@ namespace GUI
         /// <param name="e"></param>
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            FormLogin fl = new FormLogin();
+
 
             string nomeUsuario;
-           
+
             nomeUsuario = loginAux;
 
             Usuario user = new Usuario();
             user = UsuarioDao.BuscarPorLogin(new Usuario(nomeUsuario));
-        
+
             //Verificação de pagamento
-            if(chkPago.Checked == true)
+            if (chkPago.Checked == true)
             {
                 dataPagamento = DateTime.Now;
             }
@@ -100,7 +112,7 @@ namespace GUI
             idUltimaCompra = CompraDao.buscarTodos(new Compra()).Count;
             // dgvCompra.DataSource = CompraDao.buscarTodos(new Compra());
             compra.SetId(idUltimaCompra);
-                   
+
             ItemProdutoDao.salvar(new ItemProduto(0, int.Parse(txtQuantidade.Text),
                compra,
                 ProdutoDao.buscarPorDescricao(new Produto(txtProduto.Text))));
@@ -189,24 +201,56 @@ namespace GUI
             auxCliente = ClienteDao.buscarPorNome(new Cliente(nomeCliente));
 
             dgvCompra.DataSource = CompraDao.buscarPorCliente(auxCliente);
-            
+
 
 
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
-            txtCliente.Text = "";
-            txtProduto.Text = "";
-            txtQuantidade.Text = "";
-            dgvCompra.DataSource = CompraDao.buscarTodos(new Compra());
+            Restaurar();
+
+            dgvCompra.DataSource = CompraDao.buscarTodos(new CompraAux());
+
             btPesquisaPorCliente.Visible = false;
             btPesquisarPorProduto.Visible = false;
         }
 
         private void dgvCompra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Fazer ..
+            //Habilida e desabilita os seguintes botões
+            chkPago.Enabled = true;
+            btSalvar.Enabled = false;
+            btCancelar.Enabled = true;
+            btAlterar.Enabled = true;
+
+            //Verifica se a celula clicada é válida
+            if (e.RowIndex != -1)
+            {
+                // Recupera a fonte de dados como (as) ArrayList.
+                ArrayList comprasAux
+                         = dgvCompra.DataSource as ArrayList;
+
+                // Recupera o destinatario clicado no DataGridView.
+                compraClicada = (CompraAux)comprasAux[e.RowIndex];
+
+                txtCliente.Text = compraClicada.Cliente;
+                txtProduto.Text = compraClicada.Produto;
+                txtQuantidade.Text = compraClicada.Quantidade.ToString();
+
+
+            }
+
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            CompraDao.salvar(new Compra(compraClicada.GetId(), 
+                chkPago.Checked ? DateTime.Now : compraClicada.DataPagamento));
+
+            dgvCompra.DataSource = CompraDao.buscarTodos(new CompraAux());
+
+            Restaurar();
 
         }
     }

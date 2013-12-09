@@ -35,11 +35,12 @@ namespace SocialSis
 
         }
 
-       public NotaFiscalAux(ulong nBoleto,string fornecedor,
+       public NotaFiscalAux(int id, ulong nBoleto,string fornecedor,
            string insumo, int quantidade,DateTime dataPagamento, DateTime dataVencimento,
             DateTime dataCompra,
             double precoTotal)
        {
+           SetId(id);
            NBoleto = nBoleto;
            DataPagamento = dataPagamento;
            DataCompra = dataCompra;

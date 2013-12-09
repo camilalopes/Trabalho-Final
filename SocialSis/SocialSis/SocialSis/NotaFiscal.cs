@@ -31,6 +31,12 @@ namespace SocialSis
             Fornecedor = fornecedor;
         }
 
+        public NotaFiscal(int id, DateTime dataPagamento)
+        {
+            SetId(id);
+            DataPagamento = dataPagamento;
+        }
+
         public ulong NBoleto
         {
             get { return nBoleto; }

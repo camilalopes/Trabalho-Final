@@ -42,7 +42,9 @@
             this.btExcluir = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
+            this.btProcurarPorNome = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProduto
@@ -173,6 +175,7 @@
             // btAlterar
             // 
             this.btAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btAlterar.Enabled = false;
             this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAlterar.Location = new System.Drawing.Point(12, 226);
@@ -183,12 +186,24 @@
             this.btAlterar.UseVisualStyleBackColor = false;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
+            // btProcurarPorNome
+            // 
+            this.btProcurarPorNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProcurarPorNome.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarPorNome.Image")));
+            this.btProcurarPorNome.Location = new System.Drawing.Point(182, 71);
+            this.btProcurarPorNome.Name = "btProcurarPorNome";
+            this.btProcurarPorNome.Size = new System.Drawing.Size(28, 21);
+            this.btProcurarPorNome.TabIndex = 106;
+            this.btProcurarPorNome.TabStop = false;
+            this.btProcurarPorNome.Click += new System.EventHandler(this.btProcurarPorNome_Click);
+            // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(648, 270);
+            this.Controls.Add(this.btProcurarPorNome);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btCancelar);
@@ -209,6 +224,7 @@
             this.Text = "FormProduto";
             this.Load += new System.EventHandler(this.FormProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btProcurarPorNome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +245,6 @@
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.PictureBox btProcurarPorNome;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using SocialSis;
 using MySql.Data.MySqlClient;
 
@@ -52,7 +53,7 @@ namespace Dao
 
                 sql = "UPDATE " + TABELA
                     + " SET dataPagamento = @dataPagamento"
-                    + " WHERE id=@id;";
+                    + " WHERE id = @id;";
 
                 // Associação do comando à conexão.
                 cmd = new MySqlCommand(sql,
@@ -116,7 +117,7 @@ namespace Dao
 
             MySqlCommand cmd;
 
-            string sql = "select u.login as usuario, co.dataCompra as dataCompra, co.total as total, co.dataPagamento as" +
+            string sql = "select co.id as id, u.login as usuario, co.dataCompra as dataCompra, co.total as total, co.dataPagamento as" +
             " dataPagamento, ip.quantidade as quantidade, p.descricao as descricao, c.nome as" +
             " nome from produto p inner join itemproduto ip on ip.fk_produto = p.id inner join" +
             " compra co on co.id = ip.fk_compra inner join cliente c on c.cpf = co.fk_cliente" +
@@ -137,7 +138,9 @@ namespace Dao
             while (leitor.Read())
             {
                 compras.Add(
-                    new CompraAux(DateTime.Parse(leitor["dataCompra"].ToString()),
+                    new CompraAux(
+                        int.Parse(leitor["id"].ToString()),
+                        DateTime.Parse(leitor["dataCompra"].ToString()),
                        leitor["nome"].ToString(),
                        leitor["descricao"].ToString(),
                        int.Parse(leitor["quantidade"].ToString()),
